@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Melo Videomaker | Produção Audiovisual em Barra Mansa</title>
+    <meta name="description" content="Produção audiovisual, captação, edição de vídeos e cobertura de eventos em Barra Mansa e região com Gustavo Melo Videomaker. 7 anos de experiência e +200 clientes.">
+    <meta property="og:title" content="Gustavo Melo Videomaker | Produção Audiovisual">
+    <meta property="og:description" content="Transformamos ideias e momentos em vídeos com identidade, qualidade visual e intenção. Barra Mansa e região.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepGreen: '#071A14',
+                        instGreen: '#124B35',
+                        vibrantGreen: '#67B889',
+                        mistGreen: '#DCE9DF',
+                        softWhite: '#F5F7F5',
+                        charcoal: '#111412',
+                    },
+                    fontFamily: {
+                        bebas: ['"Bebas Neue"', 'sans-serif'],
+                        manrope: ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #071A14;
+            color: #F5F7F5;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .font-heading {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #071A14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #124B35;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #67B889;
+        }
+        /* Fade in animations on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body class="bg-deepGreen text-softWhite antialiased selection:bg-vibrantGreen selection:text-deepGreen">
+
+    <!-- HEADER -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-deepGreen/80 backdrop-blur-md border-b border-instGreen/30">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#inicio" class="flex flex-col group">
+                <span class="font-heading text-2xl md:text-3xl tracking-wider text-softWhite group-hover:text-vibrantGreen transition-colors">GUSTAVO MELO</span>
+                <span class="text-[10px] md:text-xs tracking-[0.25em] text-vibrantGreen font-semibold uppercase -mt-1">VIDEOMAKER</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-mistGreen">
+                <a href="#inicio" class="hover:text-vibrantGreen transition-colors">Início</a>
+                <a href="#sobre" class="hover:text-vibrantGreen transition-colors">Sobre</a>
+                <a href="#servicos" class="hover:text-vibrantGreen transition-colors">Serviços</a>
+                <a href="#portfolio" class="hover:text-vibrantGreen transition-colors">Portfólio</a>
+                <a href="#diferenciais" class="hover:text-vibrantGreen transition-colors">Diferenciais</a>
+                <a href="#processo" class="hover:text-vibrantGreen transition-colors">Processo</a>
+                <a href="#faq" class="hover:text-vibrantGreen transition-colors">FAQ</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="bg-instGreen hover:bg-vibrantGreen text-softWhite hover:text-deepGreen font-semibold text-sm px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-vibrantGreen/20 flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>SOLICITAR ORÇAMENTO</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" aria-label="Abrir Menu" class="lg:hidden text-softWhite text-2xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-x-0 top-20 bg-deepGreen/95 backdrop-blur-xl border-b border-instGreen/40 shadow-2xl transition-all duration-300 max-h-0 overflow-hidden lg:hidden">
+            <div class="flex flex-col px-6 py-6 gap-5 font-medium text-lg">
+                <a href="#inicio" class="mobile-link hover:text-vibrantGreen transition-colors">Início</a>
+                <a href="#sobre" class="mobile-link hover:text-vibrantGreen transition-colors">Sobre</a>
+                <a href="#servicos" class="mobile-link hover:text-vibrantGreen transition-colors">Serviços</a>
+                <a href="#portfolio" class="mobile-link hover:text-vibrantGreen transition-colors">Portfólio</a>
+                <a href="#diferenciais" class="mobile-link hover:text-vibrantGreen transition-colors">Diferenciais</a>
+                <a href="#processo" class="mobile-link hover:text-vibrantGreen transition-colors">Processo</a>
+                <a href="#faq" class="mobile-link hover:text-vibrantGreen transition-colors">FAQ</a>
+                <div class="pt-4 border-t border-instGreen/30">
+                    <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="w-full bg-instGreen hover:bg-vibrantGreen text-softWhite hover:text-deepGreen font-semibold text-sm py-4 rounded-xl text-center transition-all flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>SOLICITAR ORÇAMENTO</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen pt-32 pb-20 md:pt-40 md:pb-32 flex items-center overflow-hidden">
+        <!-- Subtle Background Glow / Texture -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-instGreen/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+            <!-- Left Text Column -->
+            <div class="lg:col-span-7 flex flex-col items-start text-left reveal">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-instGreen/40 border border-vibrantGreen/30 text-vibrantGreen text-xs md:text-sm font-semibold tracking-widest uppercase mb-6 shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-vibrantGreen animate-pulse"></span>
+                    PRODUÇÃO AUDIOVISUAL • BARRA MANSA, RJ
+                </div>
+
+                <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] text-softWhite mb-6">
+                    SUA MARCA MERECE <span class="text-transparent bg-clip-text bg-gradient-to-r from-vibrantGreen to-mistGreen">SER VISTA.</span>
+                </h1>
+
+                <p class="text-mistGreen text-lg md:text-xl font-normal leading-relaxed max-w-2xl mb-10">
+                    Produção audiovisual para empresas, marcas, profissionais e eventos. Transformamos ideias e momentos em vídeos com identidade, qualidade visual e intenção.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-14">
+                    <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="bg-instGreen hover:bg-vibrantGreen text-softWhite hover:text-deepGreen font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-xl shadow-instGreen/30 flex items-center justify-center gap-3 text-base group">
+                        <i class="fa-brands fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+                        <span>SOLICITAR ORÇAMENTO</span>
+                    </a>
+                    <a href="#portfolio" class="border border-instGreen hover:border-vibrantGreen text-softWhite hover:text-vibrantGreen font-semibold px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 text-base">
+                        <span>CONHECER NOSSOS TRABALHOS</span>
+                        <i class="fa-solid fa-arrow-down text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Indicators -->
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-instGreen/40 w-full max-w-xl">
+                    <div>
+                        <span class="font-heading text-3xl md:text-4xl text-vibrantGreen block">7 ANOS</span>
+                        <span class="text-xs md:text-sm text-mistGreen/80 uppercase font-medium">DE PROFISSÃO</span>
+                    </div>
+                    <div>
+                        <span class="font-heading text-3xl md:text-4xl text-vibrantGreen block">+200</span>
+                        <span class="text-xs md:text-sm text-mistGreen/80 uppercase font-medium">CLIENTES ATENDIDOS</span>
+                    </div>
+                    <div>
+                        <span class="font-heading text-3xl md:text-4xl text-vibrantGreen block">REGIÃO</span>
+                        <span class="text-xs md:text-sm text-mistGreen/80 uppercase font-medium">BARRA MANSA E RJ</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Image Column -->
+            <div class="lg:col-span-5 relative flex justify-center reveal">
+                <div class="relative w-full max-w-md lg:max-w-none">
+                    <!-- Decorative Frame -->
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-instGreen to-vibrantGreen rounded-3xl opacity-30 blur-lg -z-10"></div>
+                    
+                    <!-- Portrait Image 1 -->
+                    <div class="relative rounded-2xl overflow-hidden border-2 border-instGreen/60 shadow-2xl bg-charcoal aspect-[4/5]">
+                        <img src="assets/Foto-no-Hero.png" alt="Retrato profissional de Gustavo Melo, videomaker em Barra Mansa" fetchpriority="high" decoding="async"
+                             class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepGreen/90 via-transparent to-transparent opacity-80"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-deepGreen/80 backdrop-blur-md border border-instGreen/50">
+                            <span class="text-vibrantGreen font-bold text-sm tracking-wider uppercase block mb-1">GUSTAVO MELO</span>
+                            <p class="text-xs text-softWhite/90">Produção audiovisual para marcas, profissionais e eventos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="sobre" class="py-24 bg-softWhite text-charcoal relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Behind the scenes image (Image 2) -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-mistGreen aspect-[4/5] bg-deepGreen/10">
+                        <img src="assets/Segunda-foto.png" alt="Gustavo Melo utilizando o celular durante uma gravação" loading="lazy" decoding="async"
+                             class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <span class="text-vibrantGreen font-bold text-xs uppercase tracking-widest block mb-1">BASTIDORES EM AÇÃO</span>
+                            <h4 class="font-heading text-2xl">COMPROMISSO COM CADA DETALHE</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:col-span-7 reveal">
+                    <div class="inline-block px-3 py-1 rounded-md bg-instGreen/10 text-instGreen font-bold text-xs tracking-widest uppercase mb-4">
+                        SOBRE O PROFISSIONAL
+                    </div>
+                    <h2 class="font-heading text-4xl sm:text-5xl text-charcoal tracking-tight leading-tight mb-4">
+                        O OLHAR POR TRÁS DAS IMAGENS.
+                    </h2>
+                    <h3 class="text-instGreen font-semibold text-lg sm:text-xl mb-6">
+                        MAIS DO QUE GRAVAR, É SOBRE COMO SUA MARCA SE APRESENTA AO MUNDO.
+                    </h3>
+
+                    <div class="space-y-4 text-charcoal/80 text-base sm:text-lg leading-relaxed mb-8">
+                        <p>
+                            Meu nome é Gustavo Melo. Sou videomaker, natural de Barra Mansa, no Rio de Janeiro, e há 7 anos trabalho com produção audiovisual, ajudando marcas, empresas e profissionais a apresentarem suas ideias por meio de vídeos.
+                        </p>
+                        <p>
+                            Ao longo dessa trajetória, já atendi mais de 200 clientes, participando de projetos com diferentes objetivos, estilos e necessidades. Essa experiência me ensinou que cada trabalho exige atenção aos detalhes, compreensão da proposta e cuidado em todas as etapas da produção.
+                        </p>
+                        <p>
+                            Meu trabalho vai além de registrar imagens. Busco entender o que precisa ser comunicado e encontrar a melhor maneira de transformar essa mensagem em conteúdo audiovisual, seja para fortalecer a presença de uma marca, apresentar um produto, divulgar um serviço ou registrar um evento especial.
+                        </p>
+                        <p>
+                            Com atuação em Barra Mansa e em toda a região, desenvolvo projetos que buscam valorizar cada história, cada negócio e cada ocasião.
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20meu%20projeto." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-instGreen hover:bg-vibrantGreen text-white hover:text-deepGreen font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-instGreen/20">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>VAMOS CONVERSAR SOBRE SEU PROJETO?</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicos" class="py-24 bg-deepGreen text-softWhite relative border-t border-instGreen/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-vibrantGreen font-bold text-xs tracking-widest uppercase block mb-3">O QUE OFERECEMOS</span>
+                <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl text-softWhite tracking-tight mb-6">
+                    SOLUÇÕES AUDIOVISUAIS PARA DIFERENTES OBJETIVOS.
+                </h2>
+                <p class="text-mistGreen text-base sm:text-lg leading-relaxed">
+                    Cada negócio tem necessidades diferentes. Por isso, desenvolvemos produções audiovisuais de acordo com o objetivo, o formato e a mensagem que precisam ser transmitidos. Do planejamento à finalização, cada etapa é pensada para entregar um conteúdo alinhado à proposta do projeto.
+                </p>
+            </div>
+
+            <!-- Service Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-charcoal/80 border border-instGreen/40 rounded-2xl p-8 flex flex-col justify-between hover:border-vibrantGreen transition-all duration-300 group reveal">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-instGreen/30 border border-vibrantGreen/40 flex items-center justify-center text-vibrantGreen text-2xl mb-6 group-hover:bg-vibrantGreen group-hover:text-deepGreen transition-colors">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl text-softWhite mb-4">CAPTAÇÃO DE VÍDEOS</h3>
+                        <p class="text-mistGreen/90 text-sm sm:text-base leading-relaxed mb-8">
+                            Produção de imagens para empresas, marcas e profissionais que desejam apresentar seus produtos, serviços e espaços com qualidade visual e profissionalismo.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Tenho%20interesse%20em%20contratar%20uma%20capta%C3%A7%C3%A3o%20de%20v%C3%addeos%20e%20gostaria%20de%20conversar%20sobre%20meu%20projeto." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-vibrantGreen hover:text-softWhite font-semibold text-sm transition-colors pt-4 border-t border-instGreen/40">
+                        <span>SOLICITAR CAPTAÇÃO</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-charcoal/80 border border-instGreen/40 rounded-2xl p-8 flex flex-col justify-between hover:border-vibrantGreen transition-all duration-300 group reveal">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-instGreen/30 border border-vibrantGreen/40 flex items-center justify-center text-vibrantGreen text-2xl mb-6 group-hover:bg-vibrantGreen group-hover:text-deepGreen transition-colors">
+                            <i class="fa-solid fa-film"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl text-softWhite mb-4">EDIÇÃO DE VÍDEOS</h3>
+                        <p class="text-mistGreen/90 text-sm sm:text-base leading-relaxed mb-8">
+                            Montagem, ritmo, tratamento visual, trilhas, legendas e finalização para transformar materiais gravados em vídeos preparados para publicação.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Preciso%20de%20edi%C3%A7%C3%A3o%20de%20v%C3%addeos%20e%20gostaria%20de%20conhecer%20as%20op%C3%A7%C3%B5es%20de%20contrata%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-vibrantGreen hover:text-softWhite font-semibold text-sm transition-colors pt-4 border-t border-instGreen/40">
+                        <span>SOLICITAR EDIÇÃO</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-charcoal/80 border border-instGreen/40 rounded-2xl p-8 flex flex-col justify-between hover:border-vibrantGreen transition-all duration-300 group reveal">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-instGreen/30 border border-vibrantGreen/40 flex items-center justify-center text-vibrantGreen text-2xl mb-6 group-hover:bg-vibrantGreen group-hover:text-deepGreen transition-colors">
+                            <i class="fa-solid fa-clapperboard"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl text-softWhite mb-4">CONTEÚDO PARA REDES SOCIAIS</h3>
+                        <p class="text-mistGreen/90 text-sm sm:text-base leading-relaxed mb-8">
+                            Vídeos para Reels e outras plataformas digitais, com formatos adequados à comunicação da marca e aos objetivos de cada publicação.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Quero%20produzir%20conte%C3%BAdos%20para%20as%20redes%20sociais%20da%20minha%20empresa.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-vibrantGreen hover:text-softWhite font-semibold text-sm transition-colors pt-4 border-t border-instGreen/40">
+                        <span>PRODUZIR MEUS CONTEÚDOS</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-charcoal/80 border border-instGreen/40 rounded-2xl p-8 flex flex-col justify-between hover:border-vibrantGreen transition-all duration-300 group reveal">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-instGreen/30 border border-vibrantGreen/40 flex items-center justify-center text-vibrantGreen text-2xl mb-6 group-hover:bg-vibrantGreen group-hover:text-deepGreen transition-colors">
+                            <i class="fa-solid fa-camera-retro"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl text-softWhite mb-4">COBERTURA DE EVENTOS</h3>
+                        <p class="text-mistGreen/90 text-sm sm:text-base leading-relaxed mb-8">
+                            Registro audiovisual de eventos corporativos, celebrações, encontros, inaugurações e outras ocasiões importantes com qualidade profissional.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Gostaria%20de%20consultar%20a%20disponibilidade%20para%20a%20cobertura%20de%20um%20evento." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-vibrantGreen hover:text-softWhite font-semibold text-sm transition-colors pt-4 border-t border-instGreen/40">
+                        <span>CONSULTAR DISPONIBILIDADE</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-charcoal/80 border border-instGreen/40 rounded-2xl p-8 flex flex-col justify-between hover:border-vibrantGreen transition-all duration-300 group reveal md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-instGreen/30 border border-vibrantGreen/40 flex items-center justify-center text-vibrantGreen text-2xl mb-6 group-hover:bg-vibrantGreen group-hover:text-deepGreen transition-colors">
+                            <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl text-softWhite mb-4">VÍDEOS COMERCIAIS E INSTITUCIONAIS</h3>
+                        <p class="text-mistGreen/90 text-sm sm:text-base leading-relaxed mb-8">
+                            Produções para apresentar empresas, divulgar produtos, comunicar serviços e fortalecer a identidade de marcas com uma abordagem visual alinhada à proposta de cada negócio.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Gostaria%20de%20conversar%20sobre%20um%20v%C3%ADdeo%20comercial%20ou%20institucional%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-vibrantGreen hover:text-softWhite font-semibold text-sm transition-colors pt-4 border-t border-instGreen/40">
+                        <span>CRIAR MEU VÍDEO</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-24 bg-softWhite text-charcoal relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16 reveal">
+                <div class="lg:col-span-8">
+                    <span class="text-instGreen font-bold text-xs tracking-widest uppercase block mb-3">PORTFÓLIO OFICIAL</span>
+                    <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl text-charcoal tracking-tight mb-4">
+                        TRABALHOS EM MOVIMENTO.
+                    </h2>
+                    <h3 class="text-instGreen font-semibold text-xl">
+                        CADA PROJETO TEM SUA PRÓPRIA LINGUAGEM.
+                    </h3>
+                </div>
+                <div class="lg:col-span-4 flex lg:justify-end">
+                    <a href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener noreferrer" class="bg-instGreen hover:bg-vibrantGreen text-white hover:text-deepGreen font-bold px-6 py-4 rounded-xl transition-all duration-300 shadow-md flex items-center gap-3">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                        <span>VER NO INSTAGRAM</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portfolio Info & Direct Instagram Links Box -->
+            <div class="bg-mistGreen border border-instGreen/20 rounded-2xl p-8 sm:p-12 mb-12 shadow-sm reveal">
+                <div class="max-w-3xl">
+                    <p class="text-charcoal/80 text-base sm:text-lg leading-relaxed mb-6">
+                        Cada produção representa uma oportunidade de transformar uma ideia em uma experiência visual. Explore nossos trabalhos diretamente no Instagram oficial, onde publicamos regularmente produções reais, bastidores e diferentes estilos de edição.
+                    </p>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <a href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-charcoal text-white hover:bg-instGreen px-6 py-3 rounded-xl font-semibold text-sm transition-all">
+                            <i class="fa-brands fa-instagram text-vibrantGreen"></i>
+                            <span>@melomoviemaker</span>
+                        </a>
+                        <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Vi%20seus%20trabalhos%20e%20quero%20produzir%20meu%20v%C3%ADdeo." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-instGreen text-white hover:bg-vibrantGreen hover:text-deepGreen px-6 py-3 rounded-xl font-semibold text-sm transition-all">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>QUERO PRODUZIR MEU VÍDEO</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Showcase Grid (Using authorized aesthetic video cover placeholders pointing to Instagram) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+                <a href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener noreferrer" class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-deepGreen block shadow-lg">
+                    <img src="assets/Videos-Comerciais.jpg" alt="Celular utilizado para gravar vídeos comerciais" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <span class="text-vibrantGreen text-xs font-bold uppercase tracking-wider mb-1">VÍDEOS COMERCIAIS</span>
+                        <h4 class="font-heading text-2xl text-white mb-2">MARCAS E EMPRESAS</h4>
+                        <span class="text-xs text-mistGreen/90 flex items-center gap-1 font-semibold">Ver no Instagram <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener noreferrer" class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-deepGreen block shadow-lg">
+                    <img src="assets/Cobertura-Audiovisual.jpg" alt="Registro de casamento durante cobertura audiovisual" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <span class="text-vibrantGreen text-xs font-bold uppercase tracking-wider mb-1">EVENTOS</span>
+                        <h4 class="font-heading text-2xl text-white mb-2">COBERTURA AUDIOVISUAL</h4>
+                        <span class="text-xs text-mistGreen/90 flex items-center gap-1 font-semibold">Ver no Instagram <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener noreferrer" class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-deepGreen block shadow-lg sm:col-span-2 lg:col-span-1">
+                    <img src="assets/Reels-Conteudos-Digitais.jpg" alt="Celular preparado para gravar conteúdo digital" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                        <span class="text-vibrantGreen text-xs font-bold uppercase tracking-wider mb-1">REDES SOCIAIS</span>
+                        <h4 class="font-heading text-2xl text-white mb-2">REELS E CONTEÚDOS DIGITAIS</h4>
+                        <span class="text-xs text-mistGreen/90 flex items-center gap-1 font-semibold">Ver no Instagram <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFFERENTIALS SECTION -->
+    <section id="diferenciais" class="py-24 bg-mistGreen text-charcoal relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-instGreen font-bold text-xs tracking-widest uppercase block mb-3">POR QUE ESCOLHER GUSTAVO MELO</span>
+                <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl text-charcoal tracking-tight mb-6">
+                    EXPERIÊNCIA QUE SE CONSTRÓI PROJETO A PROJETO.
+                </h2>
+                <p class="text-charcoal/80 text-base sm:text-lg leading-relaxed">
+                    Uma produção audiovisual envolve muito mais do que equipamentos e edição. É preciso compreender o que será comunicado, como a mensagem deve ser apresentada e quais escolhas visuais fazem sentido para cada projeto.
+                </p>
+            </div>
+
+            <!-- Grid of 4 Differentials -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Diff 1 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all reveal">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="font-heading text-4xl text-instGreen">01</span>
+                        <h3 class="font-heading text-2xl text-charcoal">7 ANOS DE PROFISSÃO</h3>
+                    </div>
+                    <p class="text-charcoal/70 text-base leading-relaxed">
+                        Uma trajetória dedicada à produção audiovisual, desenvolvendo projetos com diferentes objetivos, linguagens e necessidades.
+                    </p>
+                </div>
+
+                <!-- Diff 2 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all reveal">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="font-heading text-4xl text-instGreen">02</span>
+                        <h3 class="font-heading text-2xl text-charcoal">MAIS DE 200 CLIENTES ATENDIDOS</h3>
+                    </div>
+                    <p class="text-charcoal/70 text-base leading-relaxed">
+                        Experiência construída por meio de projetos para clientes que confiaram suas ideias, marcas e momentos ao meu trabalho.
+                    </p>
+                </div>
+
+                <!-- Diff 3 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all reveal">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="font-heading text-4xl text-instGreen">03</span>
+                        <h3 class="font-heading text-2xl text-charcoal">ATENDIMENTO REGIONAL</h3>
+                    </div>
+                    <p class="text-charcoal/70 text-base leading-relaxed">
+                        Com base em Barra Mansa, realizo projetos em toda a região, alinhando cada produção às necessidades do cliente e às características do trabalho.
+                    </p>
+                </div>
+
+                <!-- Diff 4 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all reveal">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="font-heading text-4xl text-instGreen">04</span>
+                        <h3 class="font-heading text-2xl text-charcoal">ATENÇÃO AOS DETALHES</h3>
+                    </div>
+                    <p class="text-charcoal/70 text-base leading-relaxed">
+                        Do planejamento à edição, cada etapa é conduzida com foco na qualidade visual, na clareza da comunicação e no propósito de cada projeto.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center reveal">
+                <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Gostaria%20de%20solicitar%20uma%20proposta%20para%20meu%20projeto%20audiovisual." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-instGreen hover:bg-vibrantGreen text-white hover:text-deepGreen font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>SOLICITAR UMA PROPOSTA</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK PROCESS SECTION -->
+    <section id="processo" class="py-24 bg-deepGreen text-softWhite relative border-t border-instGreen/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-vibrantGreen font-bold text-xs tracking-widest uppercase block mb-3">METODOLOGIA</span>
+                <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl text-softWhite tracking-tight mb-6">
+                    DO PRIMEIRO CONTATO À ENTREGA FINAL.
+                </h2>
+                <p class="text-mistGreen text-base sm:text-lg leading-relaxed">
+                    Um processo organizado facilita a tomada de decisões e ajuda a garantir que todos estejam alinhados durante a produção. Por isso, cada projeto começa com uma conversa para compreender a necessidade do cliente e definir os próximos passos.
+                </p>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Step 1 -->
+                <div class="bg-charcoal/80 border border-instGreen/40 rounded-2xl p-8 relative reveal">
+                    <span class="font-heading text-5xl text-vibrantGreen block mb-4 opacity-80">01</span>
+                    <h3 class="font-heading text-2xl text-softWhite mb-3">CONVERSA E BRIEFING</h3>
+                    <p class="text-mistGreen/80 text-sm leading-relaxed">
+                        Entendemos sua marca, o objetivo do vídeo, o público que deseja alcançar e o tipo de material que precisa produzir.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-charcoal/80 border border-instGreen/40 rounded-2xl p-8 relative reveal">
+                    <span class="font-heading text-5xl text-vibrantGreen block mb-4 opacity-80">02</span>
+                    <h3 class="font-heading text-2xl text-softWhite mb-3">PLANEJAMENTO</h3>
+                    <p class="text-mistGreen/80 text-sm leading-relaxed">
+                        Alinhamos a proposta criativa, os formatos, as referências, o escopo e os detalhes necessários para a execução.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-charcoal/80 border border-instGreen/40 rounded-2xl p-8 relative reveal">
+                    <span class="font-heading text-5xl text-vibrantGreen block mb-4 opacity-80">03</span>
+                    <h3 class="font-heading text-2xl text-softWhite mb-3">PRODUÇÃO</h3>
+                    <p class="text-mistGreen/80 text-sm leading-relaxed">
+                        Realizamos a captação conforme o planejamento aprovado ou iniciamos a edição a partir dos materiais disponibilizados.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-charcoal/80 border border-instGreen/40 rounded-2xl p-8 relative reveal">
+                    <span class="font-heading text-5xl text-vibrantGreen block mb-4 opacity-80">04</span>
+                    <h3 class="font-heading text-2xl text-softWhite mb-3">EDIÇÃO E ENTREGA</h3>
+                    <p class="text-mistGreen/80 text-sm leading-relaxed">
+                        Finalizamos o material conforme o escopo combinado, realizamos os ajustes e entregamos nos formatos acordados.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center reveal">
+                <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Gostaria%20de%20iniciar%20meu%20projeto%20audiovisual." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-instGreen hover:bg-vibrantGreen text-softWhite hover:text-deepGreen font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-xl">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>INICIAR MEU PROJETO</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONVERSION CTA BANNER SECTION -->
+    <section class="py-20 bg-instGreen text-white relative">
+        <div class="max-w-5xl mx-auto px-6 text-center reveal">
+            <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl tracking-tight mb-6">
+                VAMOS COLOCAR SUA IDEIA EM MOVIMENTO?
+            </h2>
+            <p class="text-mistGreen text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Você já tem uma ideia, precisa produzir conteúdos com frequência ou quer apresentar sua empresa de uma nova maneira? Conte o que tem em mente.
+            </p>
+            <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Gostaria%20de%20conversar%20sobre%20um%20projeto%20audiovisual." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-deepGreen hover:bg-white text-softWhite hover:text-deepGreen font-bold px-10 py-5 rounded-2xl transition-all duration-300 shadow-2xl text-lg group">
+                <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform text-vibrantGreen"></i>
+                <span>FALAR COM GUSTAVO NO WHATSAPP</span>
+            </a>
+            <span class="block text-xs uppercase tracking-widest text-mistGreen/80 mt-4">Atendimento em Barra Mansa e região.</span>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 bg-softWhite text-charcoal relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-instGreen font-bold text-xs tracking-widest uppercase block mb-3">ESCLARECIMENTOS</span>
+                <h2 class="font-heading text-4xl sm:text-5xl text-charcoal tracking-tight mb-4">
+                    DÚVIDAS FREQUENTES.
+                </h2>
+                <p class="text-charcoal/70 text-base">
+                    Tudo o que você precisa saber antes de iniciar sua produção audiovisual.
+                </p>
+            </div>
+
+            <!-- Accordion List -->
+            <div class="space-y-4 reveal">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl overflow-hidden shadow-sm">
+                    <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left font-semibold text-lg text-charcoal flex justify-between items-center gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-instGreen">
+                        <span>Quais regiões você atende?</span>
+                        <i class="fa-solid fa-chevron-down text-instGreen transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-charcoal/70 text-base leading-relaxed">
+                        <div class="pb-5">
+                            Gustavo Melo tem como base Barra Mansa, RJ, e atende clientes em toda a região. Para projetos fora dessa área, consulte a disponibilidade e as condições de deslocamento.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl overflow-hidden shadow-sm">
+                    <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left font-semibold text-lg text-charcoal flex justify-between items-center gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-instGreen">
+                        <span>Você realiza cobertura de eventos?</span>
+                        <i class="fa-solid fa-chevron-down text-instGreen transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-charcoal/70 text-base leading-relaxed">
+                        <div class="pb-5">
+                            Sim. A cobertura audiovisual pode ser contratada para diferentes tipos de eventos. Entre em contato para informar a data, o local e o tipo de cobertura desejada.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl overflow-hidden shadow-sm">
+                    <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left font-semibold text-lg text-charcoal flex justify-between items-center gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-instGreen">
+                        <span>Como solicitar um orçamento?</span>
+                        <i class="fa-solid fa-chevron-down text-instGreen transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-charcoal/70 text-base leading-relaxed">
+                        <div class="pb-5">
+                            Envie uma mensagem pelo WhatsApp com o tipo de serviço, a data ou o prazo desejado e uma breve descrição do projeto. Assim, será possível alinhar as necessidades e preparar uma proposta.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl overflow-hidden shadow-sm">
+                    <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left font-semibold text-lg text-charcoal flex justify-between items-center gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-instGreen">
+                        <span>Quanto custa um vídeo profissional?</span>
+                        <i class="fa-solid fa-chevron-down text-instGreen transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-charcoal/70 text-base leading-relaxed">
+                        <div class="pb-5">
+                            O valor varia conforme o formato, a duração, a complexidade, a quantidade de entregas e os recursos necessários. Cada orçamento é definido de acordo com o escopo do projeto.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl overflow-hidden shadow-sm">
+                    <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left font-semibold text-lg text-charcoal flex justify-between items-center gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-instGreen">
+                        <span>Com quanto tempo de antecedência devo contratar a cobertura de um evento?</span>
+                        <i class="fa-solid fa-chevron-down text-instGreen transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-charcoal/70 text-base leading-relaxed">
+                        <div class="pb-5">
+                            O ideal é entrar em contato assim que a data estiver definida. A disponibilidade depende da agenda, por isso recomendamos consultar com antecedência.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl overflow-hidden shadow-sm">
+                    <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left font-semibold text-lg text-charcoal flex justify-between items-center gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-instGreen">
+                        <span>Posso contratar vídeos de forma recorrente?</span>
+                        <i class="fa-solid fa-chevron-down text-instGreen transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-charcoal/70 text-base leading-relaxed">
+                        <div class="pb-5">
+                            Projetos recorrentes podem ser organizados conforme a demanda de conteúdo da empresa. Entre em contato para avaliar a quantidade de vídeos, a frequência de produção e o formato de trabalho mais adequado.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="bg-white border border-instGreen/20 rounded-2xl overflow-hidden shadow-sm">
+                    <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left font-semibold text-lg text-charcoal flex justify-between items-center gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-instGreen">
+                        <span>Posso contratar apenas edição?</span>
+                        <i class="fa-solid fa-chevron-down text-instGreen transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-charcoal/70 text-base leading-relaxed">
+                        <div class="pb-5">
+                            A possibilidade de contratar somente edição depende das necessidades do projeto e dos serviços disponíveis. Entre em contato para explicar o que você precisa e alinhar os detalhes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Still have questions box -->
+            <div class="mt-16 bg-mistGreen border border-instGreen/20 rounded-2xl p-8 text-center reveal">
+                <h3 class="font-heading text-2xl text-charcoal mb-2">AINDA TEM DÚVIDAS?</h3>
+                <p class="text-charcoal/70 text-sm mb-6">Fale diretamente com o Gustavo e tire todas as suas dúvidas sobre seu projeto.</p>
+                <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Ainda%20tenho%20algumas%20d%C3%BAvidas%20sobre%20os%20servi%C3%A7os%20audiovisuais." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-instGreen hover:bg-vibrantGreen text-white hover:text-deepGreen font-bold px-6 py-3 rounded-xl transition-all text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>PERGUNTAR PELO WHATSAPP</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-charcoal text-mistGreen py-16 border-t border-instGreen/40">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1 -->
+                <div>
+                    <span class="font-heading text-2xl text-softWhite block mb-1">GUSTAVO MELO</span>
+                    <span class="text-xs tracking-[0.25em] text-vibrantGreen font-semibold uppercase block mb-4">VIDEOMAKER</span>
+                    <p class="text-sm text-mistGreen/70 leading-relaxed mb-4">
+                        Produção audiovisual para marcas, empresas, profissionais e eventos.
+                    </p>
+                    <p class="text-xs text-vibrantGreen font-medium">7 anos de profissão • +200 clientes atendidos</p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-heading text-xl text-softWhite mb-4">LOCALIZAÇÃO</h4>
+                    <p class="text-sm text-mistGreen/70 leading-relaxed mb-2">Barra Mansa, RJ.</p>
+                    <p class="text-sm text-mistGreen/70 leading-relaxed">Atendimento em Barra Mansa e toda a região.</p>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-heading text-xl text-softWhite mb-4">NAVEGAÇÃO</h4>
+                    <ul class="space-y-2 text-sm text-mistGreen/70">
+                        <li><a href="#inicio" class="hover:text-vibrantGreen transition-colors">Início</a></li>
+                        <li><a href="#sobre" class="hover:text-vibrantGreen transition-colors">Sobre</a></li>
+                        <li><a href="#servicos" class="hover:text-vibrantGreen transition-colors">Serviços</a></li>
+                        <li><a href="#portfolio" class="hover:text-vibrantGreen transition-colors">Portfólio</a></li>
+                        <li><a href="#processo" class="hover:text-vibrantGreen transition-colors">Processo</a></li>
+                        <li><a href="#faq" class="hover:text-vibrantGreen transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="font-heading text-xl text-softWhite mb-4">CONTATO RÁPIDO</h4>
+                    <div class="space-y-3">
+                        <a href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-mistGreen/80 hover:text-vibrantGreen transition-colors">
+                            <i class="fa-brands fa-instagram text-lg text-vibrantGreen"></i>
+                            <span>@melomoviemaker</span>
+                        </a>
+                        <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-mistGreen/80 hover:text-vibrantGreen transition-colors">
+                            <i class="fa-brands fa-whatsapp text-lg text-vibrantGreen"></i>
+                            <span>(24) 99835-7501</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-instGreen/20 flex flex-col sm:flex-row items-center justify-between text-xs text-mistGreen/60 gap-4">
+                <p>&copy; 2026 Gustavo Melo Videomaker. Todos os direitos reservados.</p>
+                <p>Desenvolvido por <a href="https://www.instagram.com/creative.romao/" target="_blank" rel="noopener noreferrer" class="hover:text-instGreen transition-colors duration-300 underline underline-offset-4">Creative Romão</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed WhatsApp Floating Button -->
+    <a href="https://wa.me/5524998357501?text=Ol%C3%A1%2C%20Gustavo!%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Fale pelo WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl flex items-center justify-center text-2xl md:text-3xl transition-all duration-300 hover:scale-110 group focus:outline-none">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="absolute right-full mr-3 bg-charcoal text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none hidden md:block">
+            Fale no WhatsApp
+        </span>
+    </a>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Header background transition on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-deepGreen', 'shadow-lg');
+                header.classList.remove('bg-deepGreen/80');
+            } else {
+                header.classList.remove('bg-deepGreen', 'shadow-lg');
+                header.classList.add('bg-deepGreen/80');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px') {
+                mobileMenu.style.maxHeight = '0px';
+            } else {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = '0px';
+            });
+        });
+
+        // FAQ Accordion functionality
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('fa-chevron-down');
+                
+                // Close other open accordions
+                faqToggles.forEach(otherToggle => {
+                    if (otherToggle !== toggle) {
+                        otherToggle.nextElementSibling.style.maxHeight = null;
+                        otherToggle.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                    content.style.maxHeight = null;
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    toggle.setAttribute('aria-expanded', 'true');
+                    toggle.querySelector('.fa-chevron-down').style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Scroll reveal animation using Intersection Observer
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
