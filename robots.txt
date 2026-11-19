@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://melomoviemaker.com.br/sitemap.xml
