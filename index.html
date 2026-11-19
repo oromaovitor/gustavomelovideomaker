@@ -11,7 +11,7 @@ if(matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElem
 <title>Gustavo Melo | Videomaker em Barra Mansa, RJ — Melo Moviemaker</title>
 <meta name="description" content="Gustavo Melo, videomaker em Barra Mansa (RJ) há 7 anos. Vídeos para marcas, lojas, clínicas, eventos, casamentos e 15 anos. Conteúdo que chama atenção e vende.">
 <link rel="canonical" href="https://melomoviemaker.com.br/">
-<meta name="theme-color" content="#0b0b0c">
+<meta name="theme-color" content="#121215">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Melo Moviemaker">
@@ -54,8 +54,8 @@ if(matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElem
 @property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
 
 :root{
-  --bg:#0b0b0c; --bg2:#121214; --bg3:#1a1a1d; --fg:#f2efe9; --mut:#9a968f; --line:rgba(242,239,233,.12);
-  --red:#ff2a2a; --red2:#c8101b;
+  --bg:#121215; --bg2:#1E1E22; --bg3:#28282e; --fg:#f2efe9; --mut:#9a968f; --line:rgba(242,239,233,.12);
+  --acc:#C6F432; --acc2:#6C3BFF; --rec:#ff3b30;
   --ease-out:cubic-bezier(.23,1,.32,1); --ease-move:cubic-bezier(.77,0,.175,1);
   --gut:clamp(18px,5vw,64px); --max:1280px;
   --ff:"Archivo",system-ui,sans-serif; --mono:"Mono",ui-monospace,monospace;
@@ -67,16 +67,16 @@ body{background:var(--bg);color:var(--fg);font-family:var(--ff);font-size:17px;l
 img,video{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-::selection{background:var(--red);color:#fff}
-:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
-.skip{position:fixed;left:12px;top:-60px;z-index:999;background:var(--red);color:#fff;padding:10px 14px;border-radius:8px;font-weight:700}
+::selection{background:var(--acc);color:#111}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:12px;top:-60px;z-index:999;background:var(--acc);color:#111;padding:10px 14px;border-radius:8px;font-weight:700}
 .skip:focus{top:12px}
 .wrap{width:min(var(--max),100% - 2*var(--gut));margin-inline:auto}
 .mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
 .tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
-.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red)}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc)}
 .h2{font-size:clamp(34px,6.2vw,84px);line-height:.95;font-weight:850;font-stretch:118%;text-transform:uppercase;letter-spacing:-.02em;text-wrap:balance}
-.h2 em,.h1 em{font-style:italic;font-stretch:100%;font-weight:700;color:var(--red);text-transform:none;letter-spacing:-.01em}
+.h2 em,.h1 em{font-style:italic;font-stretch:100%;font-weight:700;color:var(--acc);text-transform:none;letter-spacing:-.01em}
 .lead{color:#c9c5be;font-size:clamp(16px,1.6vw,19px);max-width:56ch}
 section{position:relative}
 .sec{padding-block:clamp(90px,13vw,170px)}
@@ -84,11 +84,11 @@ section{position:relative}
 /* Botões */
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 24px 0 26px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.02em;transition:background .2s, color .2s, scale .15s;white-space:nowrap}
 .btn:active{scale:.97}
-.btn-red{background:var(--red);color:#fff}
-.btn-red .ic{width:30px;height:30px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;margin-right:-12px;transition:rotate .25s var(--ease-out)}
+.btn-red{background:var(--acc);color:#111}
+.btn-red .ic{width:30px;height:30px;border-radius:50%;background:#111;color:var(--acc);display:grid;place-items:center;margin-right:-12px;transition:rotate .25s var(--ease-out)}
 .btn-ghost{border:1px solid rgba(242,239,233,.28);color:var(--fg)}
 @media (hover:hover){
-  .btn-red:hover{background:#ff4646}
+  .btn-red:hover{background:#d6ff4f}
   .btn-red:hover .ic{rotate:-45deg}
   .btn-ghost:hover{background:rgba(242,239,233,.08)}
 }
@@ -105,23 +105,24 @@ section{position:relative}
 /* ============ Abertura: claquete ============ */
 #intro{position:fixed;inset:0;z-index:200;pointer-events:none}
 .sem-intro #intro,.no-js #intro{display:none}
-#intro .half{position:absolute;left:0;right:0;height:50.5%;background:#f2efe9;transition:transform .75s var(--ease-move)}
+#intro .half{position:absolute;left:0;right:0;height:50.5%;background:#f2efe9;transition:transform .6s var(--ease-move)}
 #intro .top{top:0}
 #intro .bot{bottom:0}
-#intro .clap{position:absolute;left:50%;top:50%;width:min(230px,52vw);aspect-ratio:1;translate:-50% -54%;animation:clapIn .5s var(--ease-out) both}
+#intro .clap{position:absolute;left:50%;top:50%;width:min(230px,52vw);aspect-ratio:1;translate:-50% -54%;animation:clapIn .35s var(--ease-out) both}
 #intro .clap img{position:absolute;inset:0;width:100%;height:100%}
-#intro .arm{transform-origin:11% 44.5%;animation:clack 1s var(--ease-out) both}
-#intro .rec{position:absolute;left:50%;top:calc(50% + min(150px,34vw));translate:-50% 0;color:#111;font-family:var(--mono);font-size:13px;letter-spacing:.2em;opacity:0;animation:recIn .3s .62s forwards;white-space:nowrap}
-#intro .rec b{color:var(--red2)}
-#intro .flash{position:absolute;inset:0;background:#fff;opacity:0;animation:flash .35s .56s}
+#intro .arm{transform-origin:11% 44.5%;animation:clack .8s var(--ease-out) both}
+#intro .rec{position:absolute;left:50%;top:calc(50% + min(150px,34vw));translate:-50% 0;color:#111;font-family:var(--mono);font-size:13px;letter-spacing:.2em;opacity:0;animation:recIn .25s .45s forwards;white-space:nowrap}
+#intro .rec b{color:var(--rec)}
+#intro .flash{position:absolute;inset:0;background:#fff;opacity:0;animation:flash .3s .45s}
 @keyframes clapIn{from{opacity:0;scale:.86}to{opacity:1;scale:1}}
 @keyframes clack{0%,40%{transform:rotate(-12deg)}56%{transform:rotate(12.5deg)}62%{transform:rotate(9deg)}68%,100%{transform:rotate(12deg)}}
 @keyframes recIn{to{opacity:1}}
 @keyframes flash{0%{opacity:0}30%{opacity:.6}100%{opacity:0}}
 #intro.abre .top{transform:translateY(-101%)}
 #intro.abre .bot{transform:translateY(101%)}
-#intro.abre .clap,#intro.abre .rec{transition:opacity .3s,scale .6s var(--ease-move);opacity:0;scale:1.25}
-#intro .shake{animation:shake .25s .56s}
+#intro .ov{position:absolute;inset:0;transition:opacity .22s,scale .5s var(--ease-move)}
+#intro.abre .ov{opacity:0;scale:1.2}
+#intro .shake{animation:shake .22s .45s}
 @keyframes shake{25%{translate:3px -2px}50%{translate:-3px 2px}75%{translate:2px 1px}}
 
 /* ============ Menu ============ */
@@ -143,10 +144,10 @@ section{position:relative}
 .menu-open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .menu-open .burger i:nth-child(2){opacity:0}
 .menu-open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.mmenu{position:fixed;inset:0;z-index:99;background:rgba(11,11,12,.97);display:flex;flex-direction:column;justify-content:center;padding:90px var(--gut) 40px;gap:6px;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.mmenu{position:fixed;inset:0;z-index:99;background:rgba(18,18,21,.97);display:flex;flex-direction:column;justify-content:center;padding:90px var(--gut) 40px;gap:6px;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
 .menu-open .mmenu{opacity:1;visibility:visible}
 .mmenu a.l{font-size:clamp(30px,9vw,46px);font-weight:850;font-stretch:118%;text-transform:uppercase;line-height:1.15;display:flex;gap:14px;align-items:baseline}
-.mmenu a.l small{font-family:var(--mono);font-size:12px;color:var(--red);font-weight:500}
+.mmenu a.l small{font-family:var(--mono);font-size:12px;color:var(--acc);font-weight:500}
 .mmenu .btn{margin-top:28px;align-self:flex-start}
 @media (max-width:1060px){.nav ul{display:none}}
 @media (max-width:760px){.nav>.btn{display:none}.burger{display:block}}
@@ -154,7 +155,7 @@ section{position:relative}
 /* ============ Topo ============ */
 .hero{min-height:100svh;display:grid;align-items:center;overflow:hidden;padding:110px 0 60px}
 .hero .luz{position:absolute;inset:-10%;width:120%;height:120%;object-fit:cover;opacity:.32;filter:saturate(1.3)}
-.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 70% at 75% 45%,transparent,rgba(11,11,12,.75) 70%),linear-gradient(transparent 70%,var(--bg));pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 70% at 75% 45%,transparent,rgba(18,18,21,.75) 70%),linear-gradient(transparent 70%,var(--bg));pointer-events:none}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(30px,5vw,80px);align-items:center}
 .h1{font-size:clamp(40px,min(7vw,11svh),104px);line-height:.92;font-weight:900;font-stretch:120%;text-transform:uppercase;letter-spacing:-.025em;margin:22px 0 26px}
 .h1 .w{display:inline-block}
@@ -164,7 +165,7 @@ section{position:relative}
 .hero .proof{margin-top:38px;display:flex;align-items:center;gap:14px;font-size:14px;color:#c9c5be}
 .hero .proof b{white-space:nowrap;font-size:26px;font-weight:850;font-stretch:115%;color:var(--fg);letter-spacing:-.01em}
 .hero .proof .bar{width:1px;height:34px;background:var(--line)}
-.frame{position:relative;justify-self:center;height:min(76svh,720px);aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000 url(assets/video/showreel-poster.webp) center/cover;box-shadow:0 40px 120px -30px rgba(255,42,42,.35),0 0 0 1px var(--line)}
+.frame{position:relative;justify-self:center;height:min(76svh,720px);aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000 url(assets/video/showreel-poster.webp) center/cover;box-shadow:0 40px 120px -30px rgba(108,59,255,.35),0 0 0 1px var(--line)}
 .frame video{width:100%;height:100%;object-fit:cover;opacity:0;scale:1.04;transition:opacity 1s,scale 1.2s var(--ease-out)}
 .frame video.ok{opacity:1;scale:1}
 .vf{position:absolute;inset:14px;pointer-events:none;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
@@ -172,7 +173,7 @@ section{position:relative}
 .vf .c1{left:0;top:0;border-right:0;border-bottom:0}.vf .c2{right:0;top:0;border-left:0;border-bottom:0}
 .vf .c3{left:0;bottom:0;border-right:0;border-top:0}.vf .c4{right:0;bottom:0;border-left:0;border-top:0}
 .vf .rec{position:absolute;left:34px;top:4px;display:flex;align-items:center;gap:7px;font-weight:500}
-.vf .rec i{width:9px;height:9px;border-radius:50%;background:var(--red);animation:blink 1.2s steps(1) infinite}
+.vf .rec i{width:9px;height:9px;border-radius:50%;background:var(--rec);animation:blink 1.2s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 .vf .tc{position:absolute;right:34px;top:4px;font-variant-numeric:tabular-nums}
 .vf .foco{position:absolute;left:50%;top:44%;width:64px;height:48px;translate:-50% -50%;border:1px solid rgba(255,255,255,.55);animation:foco 3.2s var(--ease-out) infinite}
@@ -184,7 +185,7 @@ section{position:relative}
 .pause{position:absolute;right:12px;bottom:40px;z-index:3;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);display:grid;place-items:center;pointer-events:auto}
 .pause svg{width:14px;height:14px;fill:#fff}
 .scrollhint{position:absolute;left:50%;bottom:22px;z-index:3;translate:-50% 0;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--mut);transition:opacity .4s}
-.scrollhint i{width:1px;height:40px;background:linear-gradient(var(--red),transparent);animation:hint 1.8s var(--ease-out) infinite;transform-origin:top}
+.scrollhint i{width:1px;height:40px;background:linear-gradient(var(--acc),transparent);animation:hint 1.8s var(--ease-out) infinite;transform-origin:top}
 @keyframes hint{0%{transform:scaleY(0)}60%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
 /* entrada do título (entrando em foco) */
 .js .h1 .w{opacity:0;filter:blur(14px);letter-spacing:.18em}
@@ -198,7 +199,7 @@ section{position:relative}
   .hero{padding-top:110px}
   .hero .proof{flex-wrap:wrap;row-gap:10px}
   .frame{position:absolute;inset:0;height:auto;width:100%;aspect-ratio:auto;border-radius:0;box-shadow:none;z-index:0}
-  .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.6) 0%,rgba(11,11,12,.05) 20%,rgba(11,11,12,.25) 34%,rgba(11,11,12,.86) 52%,rgba(11,11,12,.96) 70%,var(--bg) 100%)}
+  .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,18,21,.6) 0%,rgba(18,18,21,.05) 20%,rgba(18,18,21,.25) 34%,rgba(18,18,21,.86) 52%,rgba(18,18,21,.96) 70%,var(--bg) 100%)}
   .vf{inset:84px 14px auto 14px;height:60px}
   .vf .fmt,.vf .bat,.vf .c3,.vf .c4,.vf .foco{display:none}
   .hero::after{display:none}
@@ -216,17 +217,17 @@ section{position:relative}
 .nums-head .h2{max-width:13ch;margin-top:18px}
 .nums-head .lead{max-width:40ch}
 .ngrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.ncard{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:22px 22px 24px;overflow:hidden}
-.ncard.big{grid-column:span 4;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:end;padding:clamp(24px,4vw,46px);background:radial-gradient(70% 120% at 0% 100%,rgba(255,42,42,.22),transparent 60%),var(--bg2)}
+.ncard{position:relative;background:var(--bg3);border:1px solid var(--line);border-radius:20px;padding:22px 22px 24px;overflow:hidden}
+.ncard.big{grid-column:span 4;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:end;padding:clamp(24px,4vw,46px);background:radial-gradient(70% 120% at 0% 100%,rgba(108,59,255,.38),transparent 60%),radial-gradient(40% 80% at 100% 0%,rgba(198,244,50,.10),transparent 70%),var(--bg3)}
 .ncard .who{font-family:var(--mono);font-size:12px;color:var(--mut);letter-spacing:.06em}
 .ncard .who b{color:var(--fg);font-weight:500}
 .odo{display:flex;font-size:clamp(34px,3.6vw,48px);font-weight:900;font-stretch:112%;letter-spacing:-.02em;line-height:1.1;height:1.1em;overflow:hidden;margin:14px 0 4px;-webkit-mask-image:linear-gradient(transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(transparent,#000 18%,#000 82%,transparent);font-variant-numeric:tabular-nums}
-.big .odo{font-size:clamp(52px,10vw,150px);margin:6px 0 0}
+.big .odo{font-size:clamp(36px,11.5vw,150px);margin:6px 0 0;color:var(--acc)}
 .odo .col{display:flex;flex-direction:column;transition:transform 2s cubic-bezier(.16,1,.3,1)}
 .odo .col span{height:1.1em;line-height:1.1em;display:block}
 .odo .sep{display:block}
 .ncard .lbl{font-size:14px;color:#c9c5be}
-.ncard .lbl b{color:var(--red)}
+.ncard .lbl b{color:var(--acc)}
 .ig{display:flex;gap:16px;margin-top:16px;font-size:13px;color:#d6d2cb;flex-wrap:wrap}
 .ig span{display:flex;align-items:center;gap:6px}
 .ig svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
@@ -242,10 +243,11 @@ section{position:relative}
 @media (max-width:960px){.ngrid{grid-template-columns:repeat(2,1fr)}.ncard.big{grid-column:span 2;grid-template-columns:1fr}}
 @media (max-width:560px){.ngrid{grid-template-columns:1fr}.ncard.big{grid-column:span 1}.ntotal{grid-template-columns:1fr}}
 
+@media (max-width:380px){.btn{white-space:normal;text-align:center;padding:10px 18px}.ncard{padding:18px}.ncard .who{overflow-wrap:anywhere}}
 /* ============ Letras cinéticas ============ */
-.kin{height:var(--kh,520lvh);background:#070708}
+.kin{height:var(--kh,520lvh);background:#0c0c0f}
 .kin .stage{position:sticky;top:0;height:100svh;overflow:hidden;background-image:linear-gradient(rgba(242,239,233,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(242,239,233,.045) 1px,transparent 1px);background-size:64px 64px}
-.kin .stage::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 50%,transparent,#070708 85%)}
+.kin .stage::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 50%,transparent,#0c0c0f 85%)}
 .kin .label{position:absolute;left:var(--gut);top:96px;z-index:3}
 .kin .count{position:absolute;right:var(--gut);bottom:28px;z-index:3;font-variant-numeric:tabular-nums;color:var(--mut)}
 .kw{position:absolute;left:50%;top:50%;translate:-50% -50%;display:flex;white-space:nowrap;font-weight:900;font-stretch:125%;text-transform:uppercase;line-height:1;z-index:2;opacity:0}
@@ -263,11 +265,12 @@ section{position:relative}
 .work-head{text-align:center;display:grid;justify-items:center;gap:18px;margin-bottom:60px}
 .work-head .lead{text-align:center}
 .cf{position:relative;height:calc(var(--cw)*16/9 + 30px + 2*var(--bz));--cw:min(270px,60vw);--bz:9px;perspective:1400px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
-.phone{position:absolute;left:50%;top:0;width:calc(var(--cw) + 2*var(--bz));margin-left:calc((var(--cw) + 2*var(--bz))/-2);padding:var(--bz);border-radius:42px;background:linear-gradient(145deg,#2a2a2e,#0e0e10 60%);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 30px 80px -20px rgba(0,0,0,.8);transition:transform .7s cubic-bezier(.4,0,.15,1),opacity .7s,filter .7s;cursor:pointer}
+.phone{position:absolute;left:50%;top:0;width:calc(var(--cw) + 2*var(--bz));margin-left:calc((var(--cw) + 2*var(--bz))/-2);padding:var(--bz);border-radius:42px;background:linear-gradient(145deg,#2e2e34,#121215 60%);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 30px 80px -20px rgba(0,0,0,.8);transition:transform .9s cubic-bezier(.4,0,.15,1),opacity .9s,filter .9s,box-shadow .9s}
+.phone.ativo{box-shadow:0 0 0 1px rgba(198,244,50,.35),0 40px 100px -24px rgba(108,59,255,.55)}
 .phone .scr{position:relative;aspect-ratio:9/16;border-radius:33px;overflow:hidden;background:#000 center/cover}
 .phone video{width:100%;height:100%;object-fit:cover}
 .phone .isl{position:absolute;left:50%;top:10px;width:30%;height:22px;translate:-50% 0;background:#000;border-radius:20px;z-index:2}
-.phone .play{position:absolute;left:50%;top:50%;width:62px;height:62px;translate:-50% -50%;border-radius:50%;background:rgba(255,42,42,.92);display:grid;place-items:center;z-index:2;opacity:0;scale:.8;transition:opacity .35s,scale .35s var(--ease-out);box-shadow:0 0 0 8px rgba(255,42,42,.25)}
+.phone .play{position:absolute;left:50%;top:50%;width:62px;height:62px;translate:-50% -50%;border-radius:50%;background:rgba(108,59,255,.92);display:grid;place-items:center;z-index:2;opacity:0;scale:.8;transition:opacity .35s,scale .35s var(--ease-out);box-shadow:0 0 0 8px rgba(108,59,255,.25)}
 .phone .play svg{width:20px;height:20px;fill:#fff;margin-left:3px}
 .phone.ativo .play{opacity:1;scale:1}
 .phone .tagc{position:absolute;left:12px;bottom:12px;right:12px;z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);padding:6px 10px;border-radius:999px;width:max-content;max-width:calc(100% - 24px)}
@@ -275,7 +278,7 @@ section{position:relative}
 .phone .shine::before{content:"";position:absolute;top:0;bottom:0;width:60%;left:0;background:linear-gradient(105deg,transparent,rgba(255,255,255,.18),transparent);transform:translateX(-120%)}
 .phone.ativo .shine::before{transform:translateX(260%);transition:transform 2.2s var(--ease-out) .35s}
 .cf-info{text-align:center;margin-top:34px;min-height:96px}
-.cf-info .cat{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.cf-info .cat{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
 .cf-info h3{font-size:clamp(22px,2.6vw,32px);font-weight:850;font-stretch:112%;text-transform:uppercase;margin:6px 0 4px;line-height:1.1}
 .cf-info p{color:var(--mut);font-size:15px}
 .cf-info>*{transition:opacity .3s,filter .3s}
@@ -286,25 +289,17 @@ section{position:relative}
 @media (hover:hover){.cf-nav button.ar:hover{background:rgba(242,239,233,.08)}}
 .dots{display:flex;gap:8px}
 .dots button{width:8px;height:8px;border-radius:99px;background:rgba(242,239,233,.25);transition:width .35s var(--ease-out),background .35s}
-.dots button.on{width:28px;background:var(--red)}
+.dots button.on{width:28px;background:var(--acc)}
 .work-foot{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:44px}
-/* player em tela cheia */
-.player{position:fixed;inset:0;z-index:300;background:rgba(5,5,6,.94);backdrop-filter:blur(10px);display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;padding:20px}
-.player.on{opacity:1;visibility:visible}
-.player video{max-height:calc(100svh - 120px);width:auto;max-width:100%;aspect-ratio:9/16;border-radius:18px;background:#000}
-.player .x{position:absolute;top:16px;right:16px;width:48px;height:48px;border-radius:50%;background:rgba(242,239,233,.12);display:grid;place-items:center}
-.player .x svg{width:18px;height:18px;stroke:#fff;stroke-width:2}
-.player .cap{margin-top:14px;text-align:center;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
-
 /* ============ Seletor: o que você precisa gravar ============ */
 .sel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center;margin-top:56px}
 .sel-list{display:grid;gap:4px;counter-reset:s}
 .sel-list button{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:10px;text-align:left;padding:18px 6px;border-bottom:1px solid var(--line);font-size:clamp(19px,2vw,26px);font-weight:750;font-stretch:110%;text-transform:uppercase;color:#77736d;transition:color .25s,padding .3s var(--ease-out)}
 .sel-list button .n{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--mut)}
-.sel-list button .arr{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--red);opacity:0;scale:.6;transition:opacity .25s,scale .3s var(--ease-out)}
-.sel-list button .arr svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.2}
+.sel-list button .arr{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--acc);opacity:0;scale:.6;transition:opacity .25s,scale .3s var(--ease-out)}
+.sel-list button .arr svg{width:14px;height:14px;stroke:#111;fill:none;stroke-width:2.2}
 .sel-list button.on{color:var(--fg);padding-left:14px}
-.sel-list button.on .n{color:var(--red)}
+.sel-list button.on .n{color:var(--acc)}
 .sel-list button.on .arr{opacity:1;scale:1}
 @media (hover:hover){.sel-list button:hover{color:#d6d2cb}}
 .sel-view{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
@@ -326,7 +321,7 @@ section{position:relative}
   .sel-list button{display:flex;gap:8px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-size:14px;scroll-snap-align:start;white-space:nowrap}
   .sel-list button.on{padding-left:18px;background:var(--fg);color:var(--bg)}
   .sel-list button .arr{display:none}
-  .sel-list button.on .n{color:var(--red2)}
+  .sel-list button.on .n{color:var(--acc2)}
   .sel-media{aspect-ratio:4/5;width:min(100%,480px,62svh);justify-self:center}
   .sel{margin-top:36px;gap:22px}
 }
@@ -358,11 +353,21 @@ section{position:relative}
 /* ============ Processo: claquetes empilhadas ============ */
 .proc-head{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end;margin-bottom:56px}
 .stack{display:grid;gap:26px}
-.slate{position:sticky;top:calc(96px + var(--i)*18px);background:#f2efe9;color:#0b0b0c;border-radius:26px;overflow:hidden;transform-origin:50% 0;box-shadow:0 -20px 60px -20px rgba(0,0,0,.6)}
+.slate{position:sticky;top:calc(96px + var(--i)*18px);background:#f2efe9;color:#0b0b0c;border-radius:26px;transform-origin:50% 0;box-shadow:0 -20px 60px -20px rgba(0,0,0,.6)}
+.slate .cab{position:relative;height:86px}
+.slate .braco,.slate .stripes{position:absolute;left:0;right:0;height:40px;border:3px solid #111;background:repeating-linear-gradient(-55deg,#111 0 34px,#f2efe9 34px 68px)}
+.slate .stripes{bottom:0;border-radius:0}
+.slate .braco{top:0;border-radius:26px 26px 6px 6px;background:repeating-linear-gradient(55deg,#111 0 34px,#f2efe9 34px 68px);transform-origin:22px 100%;rotate:var(--ang,0deg);box-shadow:0 10px 18px -8px rgba(0,0,0,.45);z-index:2}
+.slate .braco::before{content:"";position:absolute;left:10px;bottom:6px;width:14px;height:14px;border-radius:50%;background:#f2efe9;border:3px solid #111}
+.slate.bateu .body{animation:tremor .22s}
+.slate.bateu .cab::after{content:"";position:absolute;inset:-30px 0 auto;height:140px;background:radial-gradient(60% 50% at 30% 60%,rgba(198,244,50,.55),transparent 70%);pointer-events:none;animation:clarao .45s forwards;z-index:3}
+@keyframes tremor{30%{translate:0 2px}60%{translate:0 -1px}}
+@keyframes clarao{from{opacity:1}to{opacity:0}}
 .slate::after{content:"";position:absolute;inset:0;background:#000;opacity:var(--dark,0);pointer-events:none;border-radius:inherit}
-.slate .stripes{height:46px;background:repeating-linear-gradient(-55deg,#0b0b0c 0 34px,#f2efe9 34px 68px);border-bottom:3px solid #0b0b0c}
+
 .slate .body{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,5vw,70px);padding:clamp(24px,4vw,48px);align-items:start}
-.slate .num{font-size:clamp(84px,14vw,200px);font-weight:900;font-stretch:125%;line-height:.8;letter-spacing:-.04em;color:var(--red2)}
+.slate .num{font-size:clamp(84px,14vw,200px);font-weight:900;font-stretch:125%;line-height:.8;letter-spacing:-.04em;color:var(--acc2)}
+.slate .body{border-radius:0 0 26px 26px}
 .slate h3{font-size:clamp(26px,3.4vw,46px);font-weight:900;font-stretch:118%;text-transform:uppercase;line-height:1;margin-bottom:14px}
 .slate p{color:#3a3834;max-width:52ch}
 .slate .fields{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:8px 30px;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6b6760;border-top:1px solid rgba(0,0,0,.15);padding-top:14px}
@@ -370,12 +375,33 @@ section{position:relative}
 @media (max-width:760px){
   .proc-head{grid-template-columns:1fr}
   .slate{top:calc(78px + var(--i)*12px)}
-  .slate .body{grid-template-columns:1fr;gap:6px}
+  .slate .body{grid-template-columns:minmax(0,1fr);gap:6px;padding:22px 20px 26px}
+  .slate h3{font-size:clamp(21px,6.4vw,30px)}
   .slate .num{font-size:84px}
   .slate .fields{grid-template-columns:repeat(2,auto)}
 }
 
 @media (max-height:520px) and (orientation:landscape){.hero .vf,.hero .pause{display:none}.slate{position:relative;top:auto}.slate .num{font-size:70px}}
+/* ============ Instagram ============ */
+.ig-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,90px);align-items:center;margin-bottom:48px}
+.ig-perfil{min-width:0;display:flex;align-items:center;gap:22px;padding:26px;border:1px solid var(--line);border-radius:24px;background:var(--bg)}
+.ig-av{flex:none;width:96px;height:96px;border-radius:50%;padding:3px;background:conic-gradient(from 200deg,var(--acc),var(--acc2),var(--acc))}
+.ig-av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 20%;border:3px solid var(--bg)}
+.ig-user{font-size:22px;font-weight:800;font-stretch:110%;overflow-wrap:anywhere}
+.ig-perfil>div{min-width:0}
+.ig-head>*{min-width:0}
+.ig-nome{font-size:14px;color:#d6d2cb}
+.ig-bio{font-size:14px;color:var(--mut);margin-top:6px;max-width:34ch}
+.ig-head .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.ig-grid a{position:relative;display:block;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--bg3)}
+.ig-grid img{width:100%;height:100%;object-fit:cover;transition:scale .6s var(--ease-out),filter .4s}
+.ig-grid .rl{position:absolute;top:8px;right:8px;width:22px;height:22px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}
+.ig-grid .ov2{position:absolute;inset:0;display:grid;place-items:center;background:rgba(18,18,21,.55);opacity:0;transition:opacity .3s;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+@media (hover:hover){.ig-grid a:hover img{scale:1.06}.ig-grid a:hover .ov2{opacity:1}}
+@media (max-width:960px){.ig-head{grid-template-columns:1fr}.ig-grid{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:560px){.ig-grid{grid-template-columns:repeat(3,1fr);gap:4px}.ig-grid a{border-radius:6px}.ig-perfil{padding:18px;gap:16px}.ig-av{width:64px;height:64px}.ig-user{font-size:17px}}
+
 /* ============ FAQ ============ */
 .faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,90px)}
 .faq details{border-bottom:1px solid var(--line)}
@@ -384,32 +410,40 @@ section{position:relative}
 .faq summary i{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);position:relative;transition:rotate .3s var(--ease-out),background .3s}
 .faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--fg);translate:-50% -50%}
 .faq summary i::after{rotate:90deg}
-.faq details[open] summary i{rotate:45deg;background:var(--red);border-color:var(--red)}
+.faq details[open] summary i{rotate:45deg;background:var(--acc);border-color:var(--acc)}
+.faq details[open] summary i::before,.faq details[open] summary i::after{background:#111}
 .faq details p{color:#c9c5be;padding:0 50px 24px 0;max-width:64ch}
 .faq .side p{color:var(--mut);margin:18px 0 26px}
 @media (max-width:860px){.faq{grid-template-columns:1fr}.faq details p{padding-right:0}}
 
 /* ============ Chamada final ============ */
 .final{text-align:center;overflow:hidden}
-.final::before{content:"";position:absolute;left:50%;top:50%;width:min(900px,120vw);aspect-ratio:1;translate:-50% -50%;background:radial-gradient(closest-side,rgba(255,42,42,.25),transparent);pointer-events:none}
+.final::before{content:"";position:absolute;left:50%;top:50%;width:min(900px,120vw);aspect-ratio:1;translate:-50% -50%;background:radial-gradient(closest-side,rgba(108,59,255,.25),transparent);pointer-events:none}
 .final .big{position:relative;font-size:clamp(54px,13vw,200px);font-weight:900;font-stretch:125%;text-transform:uppercase;line-height:.88;letter-spacing:-.035em;margin:22px 0 26px}
-.final .big em{display:block;font-style:italic;font-stretch:100%;font-weight:700;color:var(--red);text-transform:none}
+.final .big em{display:block;font-style:italic;font-stretch:100%;font-weight:700;color:var(--acc);text-transform:none}
 .final .lead{margin:0 auto 34px;text-align:center}
 .final .ctas{position:relative;display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
 .btn-luz{isolation:isolate}
-.btn-luz::before{content:"";position:absolute;inset:-2px;border-radius:inherit;background:conic-gradient(from var(--a),transparent 0 70%,#fff 82%,transparent 92%);z-index:-1;animation:giro 3.2s linear infinite}
-.btn-luz::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--red);z-index:-1}
+.btn-luz::before{content:"";position:absolute;inset:-2px;border-radius:inherit;background:conic-gradient(from var(--a),transparent 0 70%,var(--acc2) 80%,#fff 84%,transparent 94%);z-index:-1;animation:giro 3.2s linear infinite}
+.btn-luz::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--acc);z-index:-1}
 @keyframes giro{to{--a:360deg}}
 
+.fclap{position:relative;width:clamp(120px,14vw,170px);aspect-ratio:1;margin:0 auto 6px;filter:invert(1) drop-shadow(0 0 30px rgba(108,59,255,.0))}
+.fclap img{position:absolute;inset:0;width:100%;height:100%}
+.fclap .arm{transform-origin:11% 44.5%;rotate:var(--ang,-20deg)}
+.final.bateu .fclap{animation:tremor .25s}
+.final .flash2{position:absolute;inset:0;background:radial-gradient(50% 40% at 50% 30%,rgba(198,244,50,.35),transparent 70%);opacity:0;pointer-events:none}
+.final.bateu .flash2{animation:clarao .6s}
+
 /* ============ Rodapé ============ */
-footer{position:relative;background:#070708;padding:70px 0 30px;overflow:hidden;border-top:1px solid var(--line)}
-footer::before{content:"";position:absolute;top:-35%;left:0;width:34%;height:170%;background:linear-gradient(90deg,transparent,rgba(255,42,42,.13),transparent);rotate:18deg;animation:feixe 12s linear infinite;animation-play-state:paused;pointer-events:none}
+footer{position:relative;background:#0c0c0f;padding:70px 0 30px;overflow:hidden;border-top:1px solid var(--line)}
+footer::before{content:"";position:absolute;top:-35%;left:0;width:34%;height:170%;background:linear-gradient(90deg,transparent,rgba(108,59,255,.13),transparent);rotate:18deg;animation:feixe 12s linear infinite;animation-play-state:paused;pointer-events:none}
 footer.live::before{animation-play-state:running}
 @keyframes feixe{from{translate:-120% 0}to{translate:420% 0}}
 .fcols{position:relative;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:60px}
 .fcols h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);font-weight:500;margin-bottom:14px}
 .fcols p,.fcols a{display:block;color:#d6d2cb;font-size:15px;line-height:1.9}
-@media (hover:hover){.fcols a:hover{color:var(--red)}}
+@media (hover:hover){.fcols a:hover{color:var(--acc)}}
 .wordmark{position:relative;display:flex;justify-content:center;white-space:nowrap;font-weight:900;font-stretch:125%;text-transform:uppercase;line-height:.82;letter-spacing:-.03em;font-size:var(--wfs,120px);user-select:none}
 .wordmark .l{display:inline-block;color:transparent;-webkit-background-clip:text;background-clip:text;
   background-image:linear-gradient(105deg,transparent 0,rgba(255,255,255,.95) 50%,transparent 100%),linear-gradient(rgba(242,239,233,.16),rgba(242,239,233,.16));
@@ -422,7 +456,7 @@ footer.live .wordmark{animation:brilho 9s linear 1s infinite}
 .wordmark.in .l{translate:0 0;opacity:1;transition:translate 1s cubic-bezier(.2,.7,.2,1),opacity 1s;transition-delay:calc(var(--k)*45ms)}
 .fbot{position:relative;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}
 .fbot a b{color:var(--fg)}
-@media (hover:hover){.fbot a:hover b{color:var(--red)}}
+@media (hover:hover){.fbot a:hover b{color:var(--acc)}}
 @media (max-width:860px){.fcols{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.fcols{grid-template-columns:1fr}}
 
@@ -452,11 +486,11 @@ footer.live .wordmark{animation:brilho 9s linear 1s infinite}
 <div id="intro" aria-hidden="true">
   <div class="half top"></div><div class="half bot"></div>
   <div class="flash"></div>
-  <div class="clap"><div class="shake" style="position:absolute;inset:0">
+  <div class="ov"><div class="clap"><div class="shake" style="position:absolute;inset:0">
     <img src="assets/img/claquete-corpo.webp" alt="" width="400" height="400">
     <img class="arm" src="assets/img/claquete-braco.webp" alt="" width="400" height="400">
   </div></div>
-  <div class="rec"><b>●</b> REC · CENA 01 · TAKE 01</div>
+  <div class="rec"><b>●</b> REC · CENA 01 · TAKE 01</div></div>
 </div>
 
 <!-- Menu -->
@@ -466,23 +500,24 @@ footer.live .wordmark{animation:brilho 9s linear 1s infinite}
     <span>MELO MOVIEMAKER<small>GUSTAVO MELO</small></span>
   </a>
   <ul>
-    <li><a href="#numeros">Números</a></li>
     <li><a href="#trabalhos">Trabalhos</a></li>
+    <li><a href="#numeros">Números</a></li>
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#sobre">Sobre</a></li>
     <li><a href="#processo">Processo</a></li>
-    <li><a href="#faq">Dúvidas</a></li>
+    <li><a href="#instagram">Instagram</a></li>
   </ul>
   <a class="btn btn-red" data-wa="topo" href="#contato">Orçamento</a>
   <button class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i><i></i></button>
 </header>
 <nav class="mmenu" id="mmenu" aria-label="Menu">
-  <a class="l" href="#numeros"><small>01</small>Números</a>
-  <a class="l" href="#trabalhos"><small>02</small>Trabalhos</a>
+  <a class="l" href="#trabalhos"><small>01</small>Trabalhos</a>
+  <a class="l" href="#numeros"><small>02</small>Números</a>
   <a class="l" href="#servicos"><small>03</small>Serviços</a>
   <a class="l" href="#sobre"><small>04</small>Sobre</a>
   <a class="l" href="#processo"><small>05</small>Processo</a>
-  <a class="l" href="#faq"><small>06</small>Dúvidas</a>
+  <a class="l" href="#instagram"><small>06</small>Instagram</a>
+  <a class="l" href="#faq"><small>07</small>Dúvidas</a>
   <a class="btn btn-red" data-wa="topo" href="#contato">Pedir orçamento no WhatsApp <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
 </nav>
 
@@ -515,8 +550,34 @@ footer.live .wordmark{animation:brilho 9s linear 1s infinite}
   <div class="scrollhint mono" aria-hidden="true">role<i></i></div>
 </section>
 
+<!-- ============ TRABALHOS ============ -->
+<section class="sec" id="trabalhos">
+  <div class="wrap">
+    <div class="work-head">
+      <p class="tag reveal">Portfólio</p>
+      <h2 class="h2 reveal">Trabalhos em <em>movimento.</em></h2>
+      <p class="lead reveal">Alguns dos vídeos que o Gustavo gravou e editou para clientes.</p>
+    </div>
+  </div>
+  <div class="cf reveal" id="cf" aria-roledescription="carrossel" aria-label="Vídeos produzidos"></div>
+  <div class="wrap">
+    <div class="cf-info" id="cfInfo" aria-live="polite"><p class="cat"></p><h3></h3><p class="desc"></p></div>
+    <div class="cf-nav">
+      <button class="ar" id="cfPrev" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="dots" id="cfDots"></div>
+      <button class="ar" id="cfNext" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="work-foot reveal">
+      <a class="btn btn-red" data-wa="trabalhos" href="#contato">Quero um vídeo assim <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener">Mais no Instagram @melomoviemaker</a>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- ============ NÚMEROS ============ -->
-<section class="sec" id="numeros">
+<section class="sec" id="numeros" style="background:var(--bg2)">
   <div class="wrap">
     <div class="nums-head">
       <div class="reveal"><p class="tag">Insights reais do Instagram</p><h2 class="h2">Os números <em>falam</em> por ele.</h2></div>
@@ -573,49 +634,8 @@ footer.live .wordmark{animation:brilho 9s linear 1s infinite}
   </div>
 </section>
 
-<!-- ============ FRASE CINÉTICA ============ -->
-<section class="kin" id="frase" aria-label="Grava. Edita. Viraliza.">
-  <div class="stage">
-    <p class="tag label">Do roteiro ao post</p>
-    <div class="kw" data-word="Grava." aria-hidden="true"></div>
-    <div class="kw" data-word="Edita." aria-hidden="true"></div>
-    <div class="kw" data-word="Viraliza." aria-hidden="true"></div>
-    <div class="static" aria-hidden="true">Grava.<br>Edita.<br><span style="color:var(--red)">Viraliza.</span></div>
-    <p class="count mono" aria-hidden="true"><span id="kinN">01</span> / 03</p>
-  </div>
-</section>
-
-<!-- ============ TRABALHOS ============ -->
-<section class="sec" id="trabalhos">
-  <div class="wrap">
-    <div class="work-head">
-      <p class="tag reveal">Portfólio</p>
-      <h2 class="h2 reveal">Trabalhos em <em>movimento.</em></h2>
-      <p class="lead reveal">Arraste para o lado e toque no vídeo do meio para assistir com som.</p>
-    </div>
-  </div>
-  <div class="cf reveal" id="cf" aria-roledescription="carrossel" aria-label="Vídeos produzidos"></div>
-  <div class="wrap">
-    <div class="cf-info" id="cfInfo" aria-live="polite"><p class="cat"></p><h3></h3><p class="desc"></p></div>
-    <div class="cf-nav">
-      <button class="ar" id="cfPrev" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <div class="dots" id="cfDots"></div>
-      <button class="ar" id="cfNext" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-    </div>
-    <div class="work-foot reveal">
-      <a class="btn btn-red" data-wa="trabalhos" href="#contato">Quero um vídeo assim <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-      <a class="btn btn-ghost" href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener">Mais no Instagram @melomoviemaker</a>
-    </div>
-  </div>
-</section>
-
-<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Assistir vídeo">
-  <button class="x" id="playerX" aria-label="Fechar vídeo"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  <div><video id="playerVideo" controls playsinline preload="none"></video><p class="cap" id="playerCap"></p></div>
-</div>
-
 <!-- ============ SERVIÇOS: SELETOR ============ -->
-<section class="sec" id="servicos" style="background:var(--bg2)">
+<section class="sec" id="servicos">
   <div class="wrap">
     <p class="tag reveal">Ele grava de tudo</p>
     <h2 class="h2 reveal" style="margin-top:18px;max-width:16ch">O que você precisa <em>gravar?</em></h2>
@@ -630,6 +650,18 @@ footer.live .wordmark{animation:brilho 9s linear 1s infinite}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ FRASE CINÉTICA ============ -->
+<section class="kin" id="frase" aria-label="Grava. Edita. Viraliza.">
+  <div class="stage">
+    <p class="tag label">Do roteiro ao post</p>
+    <div class="kw" data-word="Grava." aria-hidden="true"></div>
+    <div class="kw" data-word="Edita." aria-hidden="true"></div>
+    <div class="kw" data-word="Viraliza." aria-hidden="true"></div>
+    <div class="static" aria-hidden="true">Grava.<br>Edita.<br><span style="color:var(--acc)">Viraliza.</span></div>
+    <p class="count mono" aria-hidden="true"><span id="kinN">01</span> / 03</p>
   </div>
 </section>
 
@@ -672,17 +704,40 @@ footer.live .wordmark{animation:brilho 9s linear 1s infinite}
       <p class="lead reveal">Cada projeto começa com uma conversa. Assim a gente alinha tudo antes de gravar e você sabe exatamente o que vai receber.</p>
     </div>
     <div class="stack" id="stack">
-      <article class="slate" style="--i:0"><div class="stripes"></div><div class="body"><span class="num">01</span><div><h3>Conversa e briefing</h3><p>Entendo a sua marca, o objetivo do vídeo, o público que você quer alcançar e o tipo de material que você precisa.</p><div class="fields"><span>Cena<b>01</b></span><span>Take<b>01</b></span><span>Direção<b>Gustavo Melo</b></span></div></div></div></article>
-      <article class="slate" style="--i:1"><div class="stripes"></div><div class="body"><span class="num">02</span><div><h3>Planejamento</h3><p>Alinhamos a ideia, os formatos, as referências e o que vai ser gravado. Nada de surpresa no dia.</p><div class="fields"><span>Cena<b>02</b></span><span>Take<b>01</b></span><span>Direção<b>Gustavo Melo</b></span></div></div></div></article>
-      <article class="slate" style="--i:2"><div class="stripes"></div><div class="body"><span class="num">03</span><div><h3>Gravação</h3><p>Capto as imagens conforme o planejado, ou começo a edição a partir do material que você já tem.</p><div class="fields"><span>Cena<b>03</b></span><span>Take<b>01</b></span><span>Direção<b>Gustavo Melo</b></span></div></div></div></article>
-      <article class="slate" style="--i:3"><div class="stripes"></div><div class="body"><span class="num">04</span><div><h3>Edição e entrega</h3><p>Monto, trato as cores, coloco trilha e legenda, faço os ajustes e entrego nos formatos combinados, pronto pra postar.</p><div class="fields"><span>Cena<b>04</b></span><span>Take<b>01</b></span><span>Direção<b>Gustavo Melo</b></span></div></div></div></article>
+      <article class="slate" style="--i:0"><div class="cab"><div class="braco"></div><div class="stripes"></div></div><div class="body"><span class="num">01</span><div><h3>Conversa e briefing</h3><p>Entendo a sua marca, o objetivo do vídeo, o público que você quer alcançar e o tipo de material que você precisa.</p><div class="fields"><span>Cena<b>01</b></span><span>Take<b>01</b></span><span>Direção<b>Gustavo Melo</b></span></div></div></div></article>
+      <article class="slate" style="--i:1"><div class="cab"><div class="braco"></div><div class="stripes"></div></div><div class="body"><span class="num">02</span><div><h3>Planejamento</h3><p>Alinhamos a ideia, os formatos, as referências e o que vai ser gravado. Nada de surpresa no dia.</p><div class="fields"><span>Cena<b>02</b></span><span>Take<b>01</b></span><span>Direção<b>Gustavo Melo</b></span></div></div></div></article>
+      <article class="slate" style="--i:2"><div class="cab"><div class="braco"></div><div class="stripes"></div></div><div class="body"><span class="num">03</span><div><h3>Gravação</h3><p>Capto as imagens conforme o planejado, ou começo a edição a partir do material que você já tem.</p><div class="fields"><span>Cena<b>03</b></span><span>Take<b>01</b></span><span>Direção<b>Gustavo Melo</b></span></div></div></div></article>
+      <article class="slate" style="--i:3"><div class="cab"><div class="braco"></div><div class="stripes"></div></div><div class="body"><span class="num">04</span><div><h3>Edição e entrega</h3><p>Monto, trato as cores, coloco trilha e legenda, faço os ajustes e entrego nos formatos combinados, pronto pra postar.</p><div class="fields"><span>Cena<b>04</b></span><span>Take<b>01</b></span><span>Direção<b>Gustavo Melo</b></span></div></div></div></article>
     </div>
     <div style="display:flex;justify-content:center;margin-top:50px" class="reveal"><a class="btn btn-red" data-wa="processo" href="#contato">Começar meu projeto <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
   </div>
 </section>
 
+<!-- ============ INSTAGRAM ============ -->
+<section class="sec" id="instagram" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="ig-head">
+      <div class="ig-perfil reveal">
+        <a class="ig-av" href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener" aria-label="Abrir o Instagram @melomoviemaker"><img src="assets/img/gustavo-melo-sorrindo-560.webp" alt="Foto de perfil de Gustavo Melo" width="560" height="700" loading="lazy"></a>
+        <div>
+          <p class="ig-user">@melomoviemaker</p>
+          <p class="ig-nome">Gustavo Melo | Videomaker</p>
+          <p class="ig-bio">Conteúdo que chama atenção e vende! · +7 anos ajudando empresários a ganhar dinheiro</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="tag">Bastidores e trabalhos novos toda semana</p>
+        <h2 class="h2" style="margin:18px 0 24px">Tem muito mais no <em>Instagram.</em></h2>
+        <div class="ctas"><a class="btn btn-red" href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener">Seguir @melomoviemaker <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+        <a class="btn btn-ghost" data-wa="instagram" href="#contato">Quero um conteúdo assim</a></div>
+      </div>
+    </div>
+    <div class="ig-grid" id="igGrid"></div>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
-<section class="sec" id="faq" style="background:var(--bg2)">
+<section class="sec" id="faq">
   <div class="wrap faq">
     <div class="side">
       <p class="tag reveal">Dúvidas</p>
@@ -703,9 +758,10 @@ footer.live .wordmark{animation:brilho 9s linear 1s infinite}
 </section>
 
 <!-- ============ CHAMADA FINAL ============ -->
-<section class="sec final" id="contato">
+<section class="sec final" id="contato"><div class="flash2"></div>
   <div class="wrap">
-    <p class="tag reveal" style="justify-content:center">Cena final</p>
+    <div class="fclap" id="fclap" aria-hidden="true"><img src="assets/img/claquete-corpo.webp" alt="" width="400" height="400"><img class="arm" src="assets/img/claquete-braco.webp" alt="" width="400" height="400"></div>
+    <p class="tag reveal" style="justify-content:center">Cena final · Take 01</p>
     <h2 class="big reveal">Vamos <em>gravar?</em></h2>
     <p class="lead reveal">Você já tem uma ideia, precisa de conteúdo todo mês ou quer apresentar sua empresa de um jeito novo? Me conta o que tem em mente.</p>
     <div class="ctas reveal">
@@ -722,7 +778,7 @@ footer.live .wordmark{animation:brilho 9s linear 1s infinite}
       <div><h4>Melo Moviemaker</h4><p>Gustavo Melo, videomaker. Produção audiovisual para marcas, empresas, profissionais e eventos.</p></div>
       <div><h4>Onde</h4><p>Barra Mansa, RJ</p><p>Atendimento em toda a região</p></div>
       <div><h4>Contato</h4><a data-wa="topo" href="#contato">(24) 99835-7501</a><a href="https://www.instagram.com/melomoviemaker/" target="_blank" rel="noopener">@melomoviemaker</a><a href="https://www.instagram.com/gustav_melo/" target="_blank" rel="noopener">@gustav_melo</a></div>
-      <div><h4>Navegar</h4><a href="#trabalhos">Trabalhos</a><a href="#servicos">Serviços</a><a href="#processo">Processo</a><a href="#faq">Dúvidas</a></div>
+      <div><h4>Navegar</h4><a href="#trabalhos">Trabalhos</a><a href="#servicos">Serviços</a><a href="#processo">Processo</a><a href="#instagram">Instagram</a><a href="#faq">Dúvidas</a></div>
     </div>
   </div>
   <div class="wordmark" id="wordmark" aria-hidden="true">Gustavo Melo</div>
@@ -746,7 +802,8 @@ const MSG = {
   trabalhos:'Olá, Gustavo! Vim pelo site, vi seus trabalhos e quero conversar sobre um vídeo.',
   casamento:'Olá, Gustavo! Vim pelo site e quero um orçamento para filmar um casamento ou festa de 15 anos.',
   esporte:'Olá, Gustavo! Vim pelo site e quero um orçamento para cobrir uma corrida ou evento esportivo.',
-  loja:'Olá, Gustavo! Vim pelo site e quero vídeos para divulgar a minha loja.',
+  loja:'Olá, Gustavo! Vim pelo site e quero vídeos para divulgar o meu comércio.',
+  instagram:'Olá, Gustavo! Vim pelo site, vi seu Instagram e quero um conteúdo assim.',
   clinica:'Olá, Gustavo! Vim pelo site e quero produzir vídeos para a minha clínica ou consultório.',
   empresa:'Olá, Gustavo! Vim pelo site e quero um vídeo institucional ou comercial para a minha empresa.',
   reels:'Olá, Gustavo! Vim pelo site e quero produzir reels com frequência para o meu Instagram.',
@@ -774,8 +831,8 @@ const intro = $('#intro');
 if (intro && getComputedStyle(intro).display !== 'none'){
   try{ sessionStorage.setItem('mm-intro','1'); }catch(e){}
   let feito=false;
-  const abrir = () => { if(feito) return; feito=true; intro.classList.add('abre'); setTimeout(comecaTopo,150); setTimeout(()=>intro.remove(),900); };
-  setTimeout(abrir, 1000);
+  const abrir = () => { if(feito) return; feito=true; intro.classList.add('abre'); setTimeout(comecaTopo,120); setTimeout(()=>intro.remove(),650); };
+  setTimeout(abrir, 720);
   ['wheel','touchstart','keydown','pointerdown'].forEach(ev=>addEventListener(ev,abrir,{once:true,passive:true}));
 } else { requestAnimationFrame(comecaTopo); }
 
@@ -785,8 +842,8 @@ const navSolid=()=>nav.classList.toggle('solid', scrollY>40);
 navSolid();
 burger.addEventListener('click',()=>{ const o=document.body.classList.toggle('menu-open'); burger.setAttribute('aria-expanded',o); burger.setAttribute('aria-label',o?'Fechar menu':'Abrir menu'); });
 $$('#mmenu a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('menu-open');burger.setAttribute('aria-expanded',false)}));
-addEventListener('keydown',e=>{ if(e.key==='Escape'){ document.body.classList.remove('menu-open'); fecharPlayer(); }});
-const secs=['numeros','trabalhos','servicos','sobre','processo','faq'].map(id=>document.getElementById(id));
+addEventListener('keydown',e=>{ if(e.key==='Escape'){ document.body.classList.remove('menu-open'); }});
+const secs=['trabalhos','numeros','servicos','sobre','processo','instagram'].map(id=>document.getElementById(id));
 const navIO=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ $$('.nav ul a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)); }}),{rootMargin:'-45% 0px -50% 0px'});
 secs.forEach(s=>navIO.observe(s));
 
@@ -844,7 +901,7 @@ $$('.cnt').forEach(c=>{ c.textContent = c.dataset.fmt==='mi' ? (+c.dataset.to).t
 
 /* ---------- Frase cinética (Codrops · Kinetic Typography, MIT — adaptada sem biblioteca) ---------- */
 const kin=$('#frase'), kws=$$('.kw',kin);
-const CORES=['#f2efe9','#ff2a2a','#d0141f','#9a0f18','#5a0c12','#2a0a0d'];
+const CORES=['#f2efe9','#C6F432','#8fd12a','#6C3BFF','#4a26b8','#25145e'];
 kws.forEach(w=>{ [...w.dataset.word].forEach(ch=>{ const l=document.createElement('span'); l.className='kl';
   CORES.forEach((c,k)=>{ const s=document.createElement('span'); s.className='kc'; s.textContent=ch; s.style.color=c; s.style.zIndex=10-k; l.appendChild(s); });
   w.appendChild(l); }); });
@@ -882,7 +939,7 @@ const VIDEOS=[
   {id:'bolo-doce-lu',cat:'Loja e confeitaria',tit:'Doce Lu',desc:'Reels para a @docelu.fatias: o bolo como protagonista.',tag:'@docelu.fatias'},
   {id:'quinze-anos-camille',cat:'Festa de 15 anos',tit:'Camille Sophia · 15 anos',desc:'Ensaio e chamada "save the date" da festa de 15 anos.',tag:'15 anos'},
   {id:'clinica-estetica',cat:'Clínica de estética',tit:'Custo e benefício',desc:'Conteúdo educativo para clínica de estética, com legenda dinâmica.',tag:'Clínica'},
-  {id:'clinica-relacionamento',cat:'Clínica e saúde',tit:'Conteúdo para clínica',desc:'Vídeo de autoridade para redes sociais, gravado no consultório.',tag:'Saúde'}
+  {id:'curso-ingles',cat:'Comércio',tit:'Escola de inglês',desc:'Conteúdo para as redes de uma escola de idiomas, gravado no espaço do cliente.',tag:'Comércio'}
 ];
 const cf=$('#cf'), dots=$('#cfDots'), info=$('#cfInfo');
 let ativo=0;
@@ -890,11 +947,10 @@ const phones=VIDEOS.map((v,i)=>{
   const p=document.createElement('div'); p.className='phone'; p.setAttribute('role','group'); p.setAttribute('aria-label',`${v.cat}: ${v.tit}`);
   p.innerHTML=`<div class="scr" style="background-image:url(assets/video/${v.id}-poster.webp)"><span class="isl"></span>
     <video muted loop playsinline preload="none" poster="assets/video/${v.id}-poster.webp" data-src="assets/video/${v.id}-previa.mp4"></video>
-    <button class="play" tabindex="-1" aria-label="Assistir ${v.tit} com som"><svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg></button>
     <span class="tagc">${v.tag}</span><span class="shine"></span></div>`;
   cf.appendChild(p);
   const b=document.createElement('button'); b.setAttribute('aria-label',`Ir para ${v.tit}`); b.addEventListener('click',()=>vai(i)); dots.appendChild(b);
-  p.addEventListener('click',()=>{ if(arrastou) return; if(i===ativo) abrePlayer(i); else vai(i); });
+  p.addEventListener('click',()=>{ if(arrastou) return; if(i!==ativo){ vai(i); pausaAuto(); } });
   return p;
 });
 let cfVisivel=false;
@@ -910,8 +966,13 @@ function posCf(drag=0){
   });
 }
 function tocaAtivo(){
-  phones.forEach((p,i)=>{ const v=$('video',p); if(i===ativo && cfVisivel){ if(!v.src){ v.src=v.dataset.src; } v.play().catch(()=>{}); } else { v.pause(); } });
+  phones.forEach(p=>{ const v=$('video',p); if(cfVisivel){ if(!v.src){ v.src=v.dataset.src; } v.play().catch(()=>{}); } else { v.pause(); } });
 }
+/* gira sozinho a cada 3,4 s; para um pouco quando a pessoa mexe */
+let autoT=null, autoPausa=0;
+function pausaAuto(){ autoPausa=performance.now()+7000; }
+function autoGiro(){ clearInterval(autoT); if(reduz) return; autoT=setInterval(()=>{ if(!cfVisivel || arrastando || document.hidden || performance.now()<autoPausa) return; vai(ativo+1); },3400); }
+autoGiro();
 function vai(i,instant){
   const n=phones.length; ativo=((i%n)+n)%n; posCf();
   $$('button',dots).forEach((b,k)=>b.classList.toggle('on',k===ativo));
@@ -919,32 +980,24 @@ function vai(i,instant){
   setTimeout(()=>{ $('.cat',info).textContent=v.cat; $('h3',info).textContent=v.tit; $('.desc',info).textContent=v.desc; info.classList.remove('troca'); }, instant?0:250);
   tocaAtivo();
 }
-$('#cfPrev').addEventListener('click',()=>vai(ativo-1));
-$('#cfNext').addEventListener('click',()=>vai(ativo+1));
-cf.tabIndex=0; cf.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft') vai(ativo-1); if(e.key==='ArrowRight') vai(ativo+1); if(e.key==='Enter') abrePlayer(ativo); });
+$('#cfPrev').addEventListener('click',()=>{vai(ativo-1);pausaAuto();});
+$('#cfNext').addEventListener('click',()=>{vai(ativo+1);pausaAuto();});
+cf.tabIndex=0; cf.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft'){vai(ativo-1);pausaAuto();} if(e.key==='ArrowRight'){vai(ativo+1);pausaAuto();} });
+if(temMouse){ cf.addEventListener('mouseenter',()=>autoPausa=Infinity); cf.addEventListener('mouseleave',()=>autoPausa=performance.now()+1500); }
 let arrastando=false, arrastou=false, x0=0, y0=0, tIni=0, dx=0;
 cf.addEventListener('pointerdown',e=>{ arrastando=true; arrastou=false; x0=e.clientX; y0=e.clientY; tIni=performance.now(); dx=0; });
 addEventListener('pointermove',e=>{ if(!arrastando) return; dx=e.clientX-x0; if(Math.abs(dx)>8 && Math.abs(dx)>Math.abs(e.clientY-y0)){ arrastou=true; phones.forEach(p=>p.style.transition='none'); posCf(-dx/phones[0].offsetWidth); } });
-addEventListener('pointerup',()=>{ if(!arrastando) return; arrastando=false; phones.forEach(p=>p.style.transition=''); if(arrastou){ const W=phones[0].offsetWidth; const rap=Math.abs(dx)/(performance.now()-tIni)>.5; let passo=Math.round(-dx/W); if(passo===0 && rap) passo=dx<0?1:-1; vai(ativo+passo); setTimeout(()=>arrastou=false,50); } });
+addEventListener('pointerup',()=>{ if(!arrastando) return; arrastando=false; phones.forEach(p=>p.style.transition=''); if(arrastou){ const W=phones[0].offsetWidth; const rap=Math.abs(dx)/(performance.now()-tIni)>.5; let passo=Math.round(-dx/W); if(passo===0 && rap) passo=dx<0?1:-1; vai(ativo+passo); pausaAuto(); setTimeout(()=>arrastou=false,50); } });
 addEventListener('pointercancel',()=>{ arrastando=false; phones.forEach(p=>p.style.transition=''); posCf(); });
 new IntersectionObserver(es=>es.forEach(e=>{ cfVisivel=e.isIntersecting; tocaAtivo(); }),{threshold:.35}).observe(cf);
 vai(0,true);
-
-/* player com som */
-const player=$('#player'), pv=$('#playerVideo'); let focoAntes=null;
-function abrePlayer(i){ const v=VIDEOS[i]; focoAntes=document.activeElement; pv.src=`assets/video/${v.id}.mp4`; pv.poster=`assets/video/${v.id}-poster.webp`; $('#playerCap').textContent=`${v.cat} · ${v.tit}`;
-  player.classList.add('on'); document.documentElement.style.overflow='hidden'; pv.play().catch(()=>{}); $('#playerX').focus(); hv.pause(); }
-function fecharPlayer(){ if(!player.classList.contains('on')) return; player.classList.remove('on'); pv.pause(); pv.removeAttribute('src'); pv.load(); document.documentElement.style.overflow=''; focoAntes&&focoAntes.focus&&focoAntes.focus(); }
-$('#playerX').addEventListener('click',fecharPlayer);
-player.addEventListener('click',e=>{ if(e.target===player) fecharPlayer(); });
-player.addEventListener('keydown',e=>{ if(e.key==='Tab'){ const f=[$('#playerX'),pv]; const i=f.indexOf(document.activeElement); e.preventDefault(); f[(i+ (e.shiftKey?-1:1)+f.length)%f.length].focus(); } });
 
 /* ---------- Seletor: o que você precisa gravar ---------- */
 const TIPOS=[
   {k:'casamento',nome:'Casamentos e 15 anos',tit:'O seu dia, contado como filme',txt:'Do making of à festa: cobertura completa, com o filme do evento e os reels pra postar enquanto todo mundo ainda está falando da festa.',inc:['Making of','Cerimônia e festa','Filme + reels'],media:{v:'quinze-anos-camille'}},
   {k:'esporte',nome:'Corridas e esportes',tit:'A emoção da largada ao pódio',txt:'Corridas, campeonatos e eventos esportivos: largada, chegada, pódio e tudo que acontece no meio do caminho, entregue rápido pra organização e patrocinadores postarem.',inc:['Cobertura do evento','Aftermovie','Reels para patrocinadores'],media:{v:'corrida-nutri-day-run'}},
-  {k:'loja',nome:'Lojas e confeitarias',tit:'Vídeo que dá vontade de comprar',txt:'O produto em destaque, os bastidores e a cara da sua loja em vídeos curtos pensados pra vender, não só pra enfeitar o feed.',inc:['Produto em destaque','Bastidores','Reels de venda'],media:{v:'bolo-doce-lu'}},
-  {k:'clinica',nome:'Clínicas e saúde',tit:'Autoridade que aparece no vídeo',txt:'Conteúdo para médicos, dentistas, psicólogos e clínicas de estética: roteiro, gravação no consultório e edição com legenda, dentro das regras da sua profissão.',inc:['Roteiro','Gravação no consultório','Edição com legenda'],media:{v:'clinica-estetica'}},
+  {k:'loja',nome:'Comércio e lojas',tit:'Vídeo que dá vontade de comprar',txt:'Loja, confeitaria, restaurante ou escola: o produto em destaque, os bastidores e a cara do seu negócio em vídeos curtos pensados pra vender, não só pra enfeitar o feed.',inc:['Produto em destaque','Bastidores','Reels de venda'],media:{v:'bolo-doce-lu'}},
+  {k:'clinica',nome:'Clínicas e saúde',tit:'Autoridade que aparece no vídeo',txt:'Conteúdo para médicos, dentistas, laboratórios e clínicas de estética: roteiro, gravação no consultório e edição com legenda, dentro das regras da sua profissão.',inc:['Roteiro','Gravação no consultório','Edição com legenda'],media:{v:'clinica-estetica'}},
   {k:'empresa',nome:'Empresas e marcas',tit:'A sua empresa do jeito certo',txt:'Vídeos institucionais e comerciais que apresentam o seu negócio, a sua equipe e os seus produtos com qualidade de cinema.',inc:['Institucional','Comercial','Apresentação de produto'],media:{img:'video-comercial-tripe-736',alt:'Celular no tripé gravando conteúdo comercial'}},
   {k:'reels',nome:'Reels todo mês',tit:'Conteúdo que não para',txt:'Pacotes de vídeos recorrentes para Instagram e TikTok: a gente grava em lote e você posta com frequência, sem dor de cabeça.',inc:['Gravação em lote','Edição para reels','Calendário de posts'],media:{img:'reels-conteudo-digital-900',alt:'Celular mostrando conteúdos para redes sociais'}}
 ];
@@ -973,6 +1026,14 @@ function escolhe(i,instant){
 new IntersectionObserver(es=>es.forEach(e=>{ selVisivel=e.isIntersecting; tocaSel(); }),{threshold:.25}).observe(selMedia);
 escolhe(0,true);
 
+/* ---------- Instagram ---------- */
+const IG=[['ig-futevolei-nove7','Open Nove7 Futevôlei',1],['ig-botox','Vídeo de clínica de estética sobre botox',1],['ig-gustavo-gravando','Gustavo gravando com o celular',0],['ig-festa-das-criancas','Festa das Crianças Vista Alegre',0],
+  ['ig-cenario-ideal','O cenário ideal não se compra',0],['ig-chovendo-ingles','Formas de dizer que está chovendo em inglês',1],['ig-exame-laboratorio','Exame Laboratório',1],['ig-pergunta-besta','Quando o cliente faz pergunta besta',1],
+  ['ig-churrasco','Churrasqueira em evento',0],['ig-ensaio-tablet','Bastidores de gravação',1],['ig-indicando','Vídeo de clínica',1],['ig-curso-ingles-alunas','Escola de inglês',0]];
+const igG=$('#igGrid');
+igG.innerHTML=IG.map(([f,alt,reel])=>`<a class="reveal" href="${CLIENTE.instagram}" target="_blank" rel="noopener" aria-label="${alt} — ver no Instagram"><img src="assets/img/instagram/${f}.webp" alt="${alt}" loading="lazy" width="350" height="430">${reel?'<svg class="rl" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>':''}<span class="ov2">Ver no Instagram</span></a>`).join('');
+$$('.reveal',igG).forEach(el=>io.observe(el));
+
 /* ---------- Faixa de fotos ---------- */
 const strip=$('#strip'), track=$('.strip-track',strip);
 track.innerHTML += track.innerHTML + track.innerHTML;
@@ -998,6 +1059,27 @@ function rodaStack(){
     const p=clamp(1-(b.top-a.top)/a.height,0,1); s.style.transform=`scale(${1-.08*p})`; s.style.setProperty('--dark',(p*.35).toFixed(3)); });
 }
 
+/* claquete de cada etapa: abre ao chegar e bate quando encaixa */
+function rodaClaq(){
+  if(reduz) return;
+  slates.forEach(s=>{ const r=s.getBoundingClientRect(); if(r.bottom<-50||r.top>innerHeight+50) return;
+    let topo=parseFloat(getComputedStyle(s).top); if(isNaN(topo)) topo=96;
+    const d=r.top-topo; const p=clamp(d/(innerHeight*.4),0,1); const W=s.offsetWidth;
+    const max=Math.min(14, Math.asin(Math.min(1,(innerWidth<760?48:72)/W))*180/Math.PI);
+    s.style.setProperty('--ang',(-max*Math.pow(p,.7)).toFixed(2)+'deg');
+    if(p<=0.001){ if(!s.dataset.bateu){ s.dataset.bateu=1; s.classList.remove('bateu'); void s.offsetWidth; s.classList.add('bateu'); } }
+    else if(p>.06){ delete s.dataset.bateu; s.classList.remove('bateu'); } });
+}
+const fin=$('#contato'), fclap=$('#fclap');
+function rodaFclap(){
+  if(reduz){ fclap.style.setProperty('--ang','12deg'); return; }
+  const r=fclap.getBoundingClientRect(); if(r.bottom<-100||r.top>innerHeight+100) return;
+  const c=(r.top+r.height/2)-innerHeight*.42; const p=clamp(c/(innerHeight*.4),0,1);
+  fclap.style.setProperty('--ang',(12-34*Math.pow(p,.8)).toFixed(2)+'deg');
+  if(p<=0.001){ if(!fin.dataset.bateu){ fin.dataset.bateu=1; fin.classList.remove('bateu'); void fin.offsetWidth; fin.classList.add('bateu'); } }
+  else if(p>.08){ delete fin.dataset.bateu; fin.classList.remove('bateu'); }
+}
+
 /* ---------- Rodapé: nome que brilha ---------- */
 const wm=$('#wordmark'), foot=$('#rodape');
 const nome=wm.textContent; wm.textContent=''; const wi=document.createElement('span'); wi.className='wi'; wm.appendChild(wi);
@@ -1012,7 +1094,7 @@ const waIO=new IntersectionObserver(es=>{ es.forEach(e=>e.isIntersecting?visivei
 $$('[data-wa]').forEach(a=>{ if(a!==waF && !a.closest('.nav') && !a.closest('.mmenu') && !a.closest('.fcols')) waIO.observe(a); });
 
 /* ---------- Laço único ---------- */
-const efeitos=[rodaKin,rodaStack];
+const efeitos=[rodaKin,rodaStack,rodaClaq,rodaFclap];
 let pedido=false;
 function onScroll(){ navSolid(); waF.classList.toggle('hide', visiveis.size>0 || scrollY<innerHeight*.6); const sh=$('.scrollhint'); if(sh) sh.style.opacity=scrollY>40?0:1;
   if(pedido) return; pedido=true; requestAnimationFrame(()=>{ efeitos.forEach(f=>f()); pedido=false; }); }
